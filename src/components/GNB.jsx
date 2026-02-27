@@ -2,7 +2,7 @@ import './GNB.css';
 
 export default function GNB({ activeTab, setActiveTab }) {
     const tabs = [
-        { id: 'word', label: 'Word of the Day', kor: '오늘의 단어' },
+        { id: 'word', label: 'Essential Words', kor: '필수 영단어 1000' },
         { id: 'pattern', label: 'Pattern Play', kor: '패턴 문장 놀이' },
         { id: 'quiz', label: 'Sentence Quiz', kor: '문장 조립 퀴즈' },
         { id: 'alphabet', label: 'Alphabet Writing', kor: '알파벳 쓰기' },

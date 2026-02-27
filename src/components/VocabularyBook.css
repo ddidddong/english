@@ -1,0 +1,42 @@
+.vocabulary-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+}
+
+.category-full-title {
+    text-align: center;
+    margin: 1rem 0 0.5rem 0;
+    color: var(--primary);
+}
+
+.category-full-title h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Custom scrollbar for the word cards container to look nice */
+.custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+    display: block;
+    /* Show scrollbar here unlike globally hidden */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+.custom-scrollbar {
+    /* override global hidden scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+}

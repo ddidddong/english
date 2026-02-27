@@ -3,6 +3,9 @@ import { useState } from 'react';
 export default function WordCard({ wordData }) {
     const [flipped, setFlipped] = useState(false);
 
+    const hasImage = !!wordData.imageUrl;
+    const hasSentence = !!wordData.sentence;
+
     const handleSpeak = (e, text) => {
         e.stopPropagation(); // Prevent flipping if we just want to hear it
         if ('speechSynthesis' in window) {
@@ -37,13 +40,29 @@ export default function WordCard({ wordData }) {
 
                 {/* Back Side */}
                 <div className="word-card-back">
-                    <div className="card-image-bg" style={{ backgroundImage: `url(${wordData.imageUrl})` }}>
-                        <div className="card-overlay">
-                            <h3 className="word-title-small">{wordData.word}</h3>
-                            <p className="word-sentence">"{wordData.sentence}"</p>
-                            <button className="speak-btn-back" onClick={(e) => handleSpeak(e, wordData.sentence)}>
-                                <span className="icon">🔊</span> Read Sentence
-                            </button>
+                    <div
+                        className="card-image-bg"
+                        style={hasImage ? { backgroundImage: `url(${wordData.imageUrl})` } : {
+                            background: 'linear-gradient(135deg, var(--secondary) 0%, #B5C18E 100%)'
+                        }}
+                    >
+                        <div className="card-overlay" style={!hasImage ? { background: 'transparent', justifyContent: 'center' } : {}}>
+                            <h3 className="word-title-small" style={!hasImage ? { fontSize: '2.5rem', marginBottom: '1.5rem', color: '#fff' } : {}}>
+                                {wordData.word}
+                            </h3>
+
+                            {hasSentence ? (
+                                <>
+                                    <p className="word-sentence">"{wordData.sentence}"</p>
+                                    <button className="speak-btn-back" onClick={(e) => handleSpeak(e, wordData.sentence)}>
+                                        <span className="icon">🔊</span> Read Sentence
+                                    </button>
+                                </>
+                            ) : (
+                                <p className="word-sentence" style={{ fontSize: '1.5rem', fontStyle: 'normal', color: 'rgba(255,255,255,0.9)' }}>
+                                    {wordData.meaning}
+                                </p>
+                            )}
                         </div>
                     </div>
                 </div>
