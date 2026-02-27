@@ -83,11 +83,7 @@ function App() {
         <div className="app-container">
             <GNB activeTab={activeTab} setActiveTab={setActiveTab} />
 
-            <header className="header">
-                <div className="title-wrapper">
-                    <h1>Daily Snap</h1>
-                    <p className="subtitle-ko">매일매일 재미있는 영어 습관</p>
-                </div>
+            <header className="header" style={{ justifyContent: 'flex-end', marginBottom: '1rem' }}>
                 <div className="day-streak">
                     🔥 {streak} Day{streak !== 1 ? 's' : ''}
                 </div>
