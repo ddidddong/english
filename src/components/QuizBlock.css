@@ -60,9 +60,22 @@
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     animation: slideUp 0.3s ease-out;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.built-block:hover {
+    transform: scale(1.05) translateY(-2px);
+    background-color: #828a55;
 }
 
 .built-block.success {
+    background-color: #4CAF50;
+    cursor: default;
+}
+
+.built-block.success:hover {
+    transform: none;
     background-color: #4CAF50;
 }
 

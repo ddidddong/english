@@ -53,6 +53,11 @@ export default function QuizBlock() {
         setIsError(false);
     };
 
+    const handleRemoveBlock = (blockIndexToRemove) => {
+        if (isSuccess || isError) return;
+        setSelectedBlocks(prev => prev.filter(b => b.index !== blockIndexToRemove));
+    };
+
     return (
         <div className="quiz-container">
             <div className={`character-container ${isSuccess ? 'dance-animation' : ''}`}>
@@ -62,7 +67,11 @@ export default function QuizBlock() {
 
             <div className="building-area">
                 {selectedBlocks.map((b, i) => (
-                    <span key={i} className={`built-block ${isError ? 'error-shake' : ''} ${isSuccess ? 'success' : ''}`}>
+                    <span
+                        key={i}
+                        className={`built-block ${isError ? 'error-shake' : ''} ${isSuccess ? 'success' : ''}`}
+                        onClick={() => handleRemoveBlock(b.index)}
+                    >
                         {b.text}
                     </span>
                 ))}
