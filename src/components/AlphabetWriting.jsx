@@ -8,6 +8,7 @@ export default function AlphabetWriting() {
     const canvasRef = useRef(null);
     const [isDrawing, setIsDrawing] = useState(false);
     const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
+    const [isFlashing, setIsFlashing] = useState(false);
 
     const currentLetter = LETTERS[currentLetterIndex];
 
@@ -86,6 +87,19 @@ export default function AlphabetWriting() {
         ctx.lineJoin = 'round';
     };
 
+    const handleDone = () => {
+        // Play TTS sound
+        const utterance = new SpeechSynthesisUtterance(currentLetter);
+        utterance.lang = 'en-US';
+        speechSynthesis.speak(utterance);
+
+        // Trigger flash animation
+        setIsFlashing(true);
+        setTimeout(() => {
+            setIsFlashing(false);
+        }, 500); // Flash duration
+    };
+
     // Redraw when letter changes
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -109,7 +123,7 @@ export default function AlphabetWriting() {
     }, [currentLetter]);
 
     return (
-        <div className="alphabet-container">
+        <div className={`alphabet-container ${isFlashing ? 'flash-effect' : ''}`}>
             <div className="controls-top">
                 <button onClick={prevLetter} className="nav-btn">◀</button>
                 <div className="letter-indicator">Letter: {currentLetter}</div>
@@ -131,6 +145,9 @@ export default function AlphabetWriting() {
             </div>
 
             <div className="controls-bottom">
+                <button className="done-btn" onClick={handleDone}>
+                    완성 (Done)
+                </button>
                 <button className="clear-btn" onClick={clearCanvas}>
                     지우기 (Clear)
                 </button>
