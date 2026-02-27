@@ -6,6 +6,9 @@ const LETTERS = ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e'];
 
 export default function AlphabetWriting() {
     const canvasRef = useRef(null);
+    const drawingTimeoutRef = useRef(null);
+    const hasDrawnRef = useRef(false);
+
     const [isDrawing, setIsDrawing] = useState(false);
     const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
     const [isFlashing, setIsFlashing] = useState(false);
@@ -18,10 +21,15 @@ export default function AlphabetWriting() {
         ctx.beginPath();
         ctx.moveTo(offsetX, offsetY);
         setIsDrawing(true);
+        if (drawingTimeoutRef.current) {
+            clearTimeout(drawingTimeoutRef.current);
+        }
     };
 
     const draw = ({ nativeEvent }) => {
         if (!isDrawing) return;
+        hasDrawnRef.current = true;
+
         const { offsetX, offsetY } = getCoordinates(nativeEvent);
         const ctx = canvasRef.current.getContext('2d');
         ctx.lineTo(offsetX, offsetY);
@@ -32,6 +40,16 @@ export default function AlphabetWriting() {
         setIsDrawing(false);
         const ctx = canvasRef.current.getContext('2d');
         ctx.closePath();
+
+        if (hasDrawnRef.current) {
+            if (drawingTimeoutRef.current) {
+                clearTimeout(drawingTimeoutRef.current);
+            }
+            drawingTimeoutRef.current = setTimeout(() => {
+                handleDone();
+                hasDrawnRef.current = false;
+            }, 1200);
+        }
     };
 
     const getCoordinates = (event) => {
@@ -46,6 +64,9 @@ export default function AlphabetWriting() {
     };
 
     const clearCanvas = () => {
+        if (drawingTimeoutRef.current) clearTimeout(drawingTimeoutRef.current);
+        hasDrawnRef.current = false;
+
         const canvas = canvasRef.current;
         if (canvas) {
             const ctx = canvas.getContext('2d');
@@ -55,10 +76,14 @@ export default function AlphabetWriting() {
     };
 
     const nextLetter = () => {
+        if (drawingTimeoutRef.current) clearTimeout(drawingTimeoutRef.current);
+        hasDrawnRef.current = false;
         setCurrentLetterIndex((prev) => (prev + 1) % LETTERS.length);
     };
 
     const prevLetter = () => {
+        if (drawingTimeoutRef.current) clearTimeout(drawingTimeoutRef.current);
+        hasDrawnRef.current = false;
         setCurrentLetterIndex((prev) => (prev === 0 ? LETTERS.length - 1 : prev - 1));
     };
 
@@ -145,9 +170,6 @@ export default function AlphabetWriting() {
             </div>
 
             <div className="controls-bottom">
-                <button className="done-btn" onClick={handleDone}>
-                    완성 (Done)
-                </button>
                 <button className="clear-btn" onClick={clearCanvas}>
                     지우기 (Clear)
                 </button>
