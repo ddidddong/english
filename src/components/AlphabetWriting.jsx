@@ -5,6 +5,52 @@ import './AlphabetWriting.css';
 // Pre-define some target letters for tracing
 const LETTERS = ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e'];
 
+// Hardcoded stroke guide mapping (simplified coordinates relative to 300x300 canvas)
+const STROKE_GUIDES = {
+    'A': [
+        { x: 150, y: 30, text: '1', dir: 'dl' }, // down-left
+        { x: 150, y: 30, text: '2', dir: 'dr' }, // down-right
+        { x: 80, y: 150, text: '3', dir: 'r' }   // right (crossbar)
+    ],
+    'a': [
+        { x: 200, y: 120, text: '1', dir: 'dl', curve: true }, // circular
+        { x: 200, y: 120, text: '2', dir: 'd' }   // straight down stem
+    ],
+    'B': [
+        { x: 100, y: 30, text: '1', dir: 'd' },
+        { x: 100, y: 30, text: '2', dir: 'r', curve: true },
+        { x: 100, y: 150, text: '3', dir: 'r', curve: true }
+    ],
+    'b': [
+        { x: 100, y: 30, text: '1', dir: 'd' },
+        { x: 100, y: 150, text: '2', dir: 'r', curve: true }
+    ],
+    'C': [
+        { x: 200, y: 50, text: '1', dir: 'l', curve: true }
+    ],
+    'c': [
+        { x: 180, y: 120, text: '1', dir: 'l', curve: true }
+    ],
+    'D': [
+        { x: 100, y: 30, text: '1', dir: 'd' },
+        { x: 100, y: 30, text: '2', dir: 'r', curve: true }
+    ],
+    'd': [
+        { x: 200, y: 120, text: '1', dir: 'l', curve: true },
+        { x: 200, y: 30, text: '2', dir: 'd' }
+    ],
+    'E': [
+        { x: 100, y: 30, text: '1', dir: 'd' },
+        { x: 100, y: 30, text: '2', dir: 'r' },
+        { x: 100, y: 140, text: '3', dir: 'r' },
+        { x: 100, y: 270, text: '4', dir: 'r' }
+    ],
+    'e': [
+        { x: 120, y: 180, text: '1', dir: 'r' },
+        { x: 220, y: 180, text: '2', dir: 'l', curve: true }
+    ]
+};
+
 const PRONUNCIATION_MAP = {
     'A': 'ay', 'a': 'ay',
     'B': 'bee', 'b': 'bee',
@@ -191,7 +237,7 @@ export default function AlphabetWriting() {
         ctx.textBaseline = 'middle';
         ctx.fillText(currentLetter, w / 2, h / 2 + 20);
 
-        // Draw guide lines
+        // Draw center dashed guide line
         ctx.beginPath();
         ctx.setLineDash([10, 10]);
         ctx.moveTo(0, h / 2);
@@ -200,6 +246,57 @@ export default function AlphabetWriting() {
         ctx.lineWidth = 1;
         ctx.stroke();
         ctx.setLineDash([]);
+
+        // Draw Stroke Order Guides
+        const guides = STROKE_GUIDES[currentLetter];
+        if (guides) {
+            guides.forEach((guide) => {
+                // Draw circle background for number
+                ctx.beginPath();
+                ctx.arc(guide.x, guide.y, 14, 0, Math.PI * 2);
+                ctx.fillStyle = '#777';
+                ctx.fill();
+
+                // Draw number text
+                ctx.font = 'bold 16px "Inter", sans-serif';
+                ctx.fillStyle = '#ffffff';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(guide.text, guide.x, guide.y);
+
+                // Draw tiny arrow indicating direction
+                ctx.beginPath();
+                ctx.strokeStyle = '#777';
+                ctx.lineWidth = 3;
+
+                const arrowLen = 15;
+                const offset = 18;
+                let startX = guide.x;
+                let startY = guide.y;
+                let endX = startX;
+                let endY = startY;
+
+                if (guide.dir === 'd') { startY += offset; endY = startY + arrowLen; }
+                else if (guide.dir === 'r') { startX += offset; endX = startX + arrowLen; }
+                else if (guide.dir === 'l') { startX -= offset; endX = startX - arrowLen; }
+                else if (guide.dir === 'dl') { startX -= offset; startY += offset; endX = startX - arrowLen; endY = startY + arrowLen; }
+                else if (guide.dir === 'dr') { startX += offset; startY += offset; endX = startX + arrowLen; endY = startY + arrowLen; }
+
+                // Only draw arrow if we defined an offset start
+                if (startX !== guide.x || startY !== guide.y) {
+                    // draw arrow shaft
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(endX, endY);
+                    ctx.stroke();
+
+                    // draw arrowhead
+                    ctx.beginPath();
+                    ctx.fillStyle = '#777';
+                    ctx.arc(endX, endY, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            });
+        }
 
         // Reset stroke for drawing
         ctx.strokeStyle = '#FF7B54'; /* primary color */
