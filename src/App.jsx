@@ -4,6 +4,7 @@ import WordCard from './components/WordCard';
 import PatternPlay from './components/PatternPlay';
 import QuizBlock from './components/QuizBlock';
 import AlphabetWriting from './components/AlphabetWriting';
+import EssentialSentences from './components/EssentialSentences';
 import './index.css';
 
 const DAILY_WORDS = [
@@ -133,6 +134,12 @@ function App() {
                             <p className="section-desc-ko">화면을 드래그하여 대문자와 소문자 알파벳을 적어보세요!</p>
                         </div>
                         <AlphabetWriting />
+                    </section>
+                )}
+
+                {activeTab === 'essential' && (
+                    <section className="feature-section">
+                        <EssentialSentences />
                     </section>
                 )}
             </main>

@@ -5,7 +5,8 @@ export default function GNB({ activeTab, setActiveTab }) {
         { id: 'word', label: 'Word of the Day', kor: '오늘의 단어' },
         { id: 'pattern', label: 'Pattern Play', kor: '패턴 문장 놀이' },
         { id: 'quiz', label: 'Sentence Quiz', kor: '문장 조립 퀴즈' },
-        { id: 'alphabet', label: 'Alphabet Writing', kor: '알파벳 쓰기' }
+        { id: 'alphabet', label: 'Alphabet Writing', kor: '알파벳 쓰기' },
+        { id: 'essential', label: 'Essential 500', kor: '필수 문장 500' }
     ];
 
     return (

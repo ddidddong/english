@@ -1,0 +1,2052 @@
+[
+  {
+    "title": "나의 감정과 상태 표현하기 (I am / I feel ~)",
+    "sentences": [
+      {
+        "en": "I'm happy.",
+        "ko": "나는 행복해."
+      },
+      {
+        "en": "I'm sad.",
+        "ko": "나는 슬퍼."
+      },
+      {
+        "en": "I'm angry.",
+        "ko": "나는 화나."
+      },
+      {
+        "en": "I'm mad.",
+        "ko": "나 화났어."
+      },
+      {
+        "en": "I'm hungry.",
+        "ko": "나 배고파."
+      },
+      {
+        "en": "I'm full.",
+        "ko": "나 배불러."
+      },
+      {
+        "en": "I'm thirsty.",
+        "ko": "나 목말라."
+      },
+      {
+        "en": "I'm tired.",
+        "ko": "나 피곤해."
+      },
+      {
+        "en": "I'm sick.",
+        "ko": "나 아파."
+      },
+      {
+        "en": "I'm sleepy.",
+        "ko": "나 졸려."
+      },
+      {
+        "en": "I'm bored.",
+        "ko": "나 심심해."
+      },
+      {
+        "en": "I'm scared.",
+        "ko": "나 무서워."
+      },
+      {
+        "en": "I'm excited.",
+        "ko": "나 신나."
+      },
+      {
+        "en": "I'm nervous.",
+        "ko": "나 떨려."
+      },
+      {
+        "en": "I'm busy.",
+        "ko": "나 바빠."
+      },
+      {
+        "en": "I'm ready.",
+        "ko": "나 준비됐어."
+      },
+      {
+        "en": "I'm done.",
+        "ko": "나 다 했어."
+      },
+      {
+        "en": "I'm sorry.",
+        "ko": "미안해."
+      },
+      {
+        "en": "I'm sure.",
+        "ko": "난 확신해."
+      },
+      {
+        "en": "I'm fine.",
+        "ko": "난 괜찮아."
+      },
+      {
+        "en": "I'm free.",
+        "ko": "나 시간 있어."
+      },
+      {
+        "en": "I'm late.",
+        "ko": "나 늦었어."
+      },
+      {
+        "en": "I'm single.",
+        "ko": "나 싱글이야."
+      },
+      {
+        "en": "I'm starving.",
+        "ko": "나 배고파 죽겠어."
+      },
+      {
+        "en": "I'm touched.",
+        "ko": "나 감동받았어."
+      },
+      {
+        "en": "I'm exhausted.",
+        "ko": "나 지쳤어."
+      },
+      {
+        "en": "I'm impressed.",
+        "ko": "인상 깊어."
+      },
+      {
+        "en": "I'm disappointed.",
+        "ko": "실망이야."
+      },
+      {
+        "en": "I'm serious.",
+        "ko": "나 진지해."
+      },
+      {
+        "en": "I'm a student.",
+        "ko": "나는 학생이야."
+      },
+      {
+        "en": "I feel good.",
+        "ko": "기분 좋아."
+      },
+      {
+        "en": "I feel sick.",
+        "ko": "나 아파."
+      },
+      {
+        "en": "I feel cold.",
+        "ko": "나 추워."
+      },
+      {
+        "en": "I feel hot.",
+        "ko": "나 더워."
+      },
+      {
+        "en": "I feel dizzy.",
+        "ko": "나 어지러워."
+      },
+      {
+        "en": "I feel tired.",
+        "ko": "나 피곤해."
+      },
+      {
+        "en": "I am studying.",
+        "ko": "나 공부 중이야."
+      },
+      {
+        "en": "I am watching TV.",
+        "ko": "나 TV 보는 중이야."
+      },
+      {
+        "en": "I am reading.",
+        "ko": "나 읽는 중이야."
+      },
+      {
+        "en": "I am coming.",
+        "ko": "지금 가고 있어."
+      },
+      {
+        "en": "I am getting ready.",
+        "ko": "나 준비 중이야."
+      },
+      {
+        "en": "I am going home.",
+        "ko": "나 집에 가는 중이야."
+      },
+      {
+        "en": "I am telling!",
+        "ko": "나 이를 거야!"
+      },
+      {
+        "en": "I am running.",
+        "ko": "나 뛰고 있어."
+      },
+      {
+        "en": "I am walking.",
+        "ko": "나 걷고 있어."
+      },
+      {
+        "en": "I am sleeping.",
+        "ko": "나 자고 있어."
+      },
+      {
+        "en": "I am playing.",
+        "ko": "나 놀고 있어."
+      },
+      {
+        "en": "I am waiting.",
+        "ko": "나 기다리고 있어."
+      },
+      {
+        "en": "I am listening.",
+        "ko": "나 듣고 있어."
+      },
+      {
+        "en": "I am eating.",
+        "ko": "나 먹고 있어."
+      }
+    ]
+  },
+  {
+    "title": "좋아하는 것/싫어하는 것 (I like / I don't like)",
+    "sentences": [
+      {
+        "en": "I like it.",
+        "ko": "나 이거 좋아."
+      },
+      {
+        "en": "I like coffee.",
+        "ko": "나는 커피를 좋아해."
+      },
+      {
+        "en": "I like apples.",
+        "ko": "나는 사과를 좋아해."
+      },
+      {
+        "en": "I like bananas.",
+        "ko": "나는 바나나를 좋아해."
+      },
+      {
+        "en": "I like strawberries.",
+        "ko": "나는 딸기를 좋아해."
+      },
+      {
+        "en": "I like grapes.",
+        "ko": "나는 포도를 좋아해."
+      },
+      {
+        "en": "I like water.",
+        "ko": "나는 물을 좋아해."
+      },
+      {
+        "en": "I like milk.",
+        "ko": "나는 우유를 좋아해."
+      },
+      {
+        "en": "I like juice.",
+        "ko": "나는 주스를 좋아해."
+      },
+      {
+        "en": "I like ice cream.",
+        "ko": "나는 아이스크림을 좋아해."
+      },
+      {
+        "en": "I like pizza.",
+        "ko": "나는 피자를 좋아해."
+      },
+      {
+        "en": "I like cake.",
+        "ko": "나는 케이크를 좋아해."
+      },
+      {
+        "en": "I like meat.",
+        "ko": "나는 고기를 좋아해."
+      },
+      {
+        "en": "I like chicken.",
+        "ko": "나는 치킨을 좋아해."
+      },
+      {
+        "en": "I like fish.",
+        "ko": "나는 생선을 좋아해."
+      },
+      {
+        "en": "I like cheese.",
+        "ko": "나는 치즈를 좋아해."
+      },
+      {
+        "en": "I like chocolate.",
+        "ko": "나는 초콜릿을 좋아해."
+      },
+      {
+        "en": "I like candy.",
+        "ko": "나는 사탕을 좋아해."
+      },
+      {
+        "en": "I like toys.",
+        "ko": "나는 장난감을 좋아해."
+      },
+      {
+        "en": "I like dolls.",
+        "ko": "나는 인형을 좋아해."
+      },
+      {
+        "en": "I like games.",
+        "ko": "나는 게임을 좋아해."
+      },
+      {
+        "en": "I like movies.",
+        "ko": "나는 영화를 좋아해."
+      },
+      {
+        "en": "I like sports.",
+        "ko": "나는 운동을 좋아해."
+      },
+      {
+        "en": "I like soccer.",
+        "ko": "나는 축구를 좋아해."
+      },
+      {
+        "en": "I like baseball.",
+        "ko": "나는 야구를 좋아해."
+      },
+      {
+        "en": "I like animals.",
+        "ko": "나는 동물을 좋아해."
+      },
+      {
+        "en": "I like dogs.",
+        "ko": "나는 강아지를 좋아해."
+      },
+      {
+        "en": "I like cats.",
+        "ko": "나는 고양이를 좋아해."
+      },
+      {
+        "en": "I like birds.",
+        "ko": "나는 새를 좋아해."
+      },
+      {
+        "en": "I like books.",
+        "ko": "나는 책을 좋아해."
+      },
+      {
+        "en": "I like music.",
+        "ko": "나는 음악을 좋아해."
+      },
+      {
+        "en": "I like English.",
+        "ko": "나는 영어를 좋아해."
+      },
+      {
+        "en": "I like math.",
+        "ko": "나는 수학을 좋아해."
+      },
+      {
+        "en": "I like school.",
+        "ko": "나는 학교를 좋아해."
+      },
+      {
+        "en": "I like my friends.",
+        "ko": "나는 내 친구들을 좋아해."
+      },
+      {
+        "en": "I love it.",
+        "ko": "나 이거 정말 좋아."
+      },
+      {
+        "en": "I love this.",
+        "ko": "나 이거 정말 좋아해."
+      },
+      {
+        "en": "I love my mom.",
+        "ko": "나는 엄마를 사랑해."
+      },
+      {
+        "en": "I don't like that game.",
+        "ko": "난 그 게임 안 좋아해."
+      },
+      {
+        "en": "I don't like fighting.",
+        "ko": "나는 싸우는 거 싫어해."
+      },
+      {
+        "en": "I don't like bugs.",
+        "ko": "나는 벌레를 싫어해."
+      },
+      {
+        "en": "I don't like snakes.",
+        "ko": "나는 뱀을 싫어해."
+      },
+      {
+        "en": "I don't like homework.",
+        "ko": "나는 숙제가 싫어."
+      },
+      {
+        "en": "I don't like rain.",
+        "ko": "나는 비가 싫어."
+      },
+      {
+        "en": "I don't like cold weather.",
+        "ko": "나는 추운 날씨가 싫어."
+      },
+      {
+        "en": "I don't like hot weather.",
+        "ko": "나는 더운 날씨가 싫어."
+      },
+      {
+        "en": "I don't like crying.",
+        "ko": "나는 우는 거 싫어해."
+      },
+      {
+        "en": "I don't want it.",
+        "ko": "나 그거 원하지 않아."
+      },
+      {
+        "en": "I hate it.",
+        "ko": "나는 그거 싫어."
+      },
+      {
+        "en": "I hate waiting.",
+        "ko": "나는 기다리는 거 싫어."
+      }
+    ]
+  },
+  {
+    "title": "원하고 필요한 것 (I want / I need)",
+    "sentences": [
+      {
+        "en": "I want water.",
+        "ko": "물 원해요."
+      },
+      {
+        "en": "I want milk.",
+        "ko": "우유 원해요."
+      },
+      {
+        "en": "I want juice.",
+        "ko": "주스 원해요."
+      },
+      {
+        "en": "I want an apple.",
+        "ko": "사과 원해요."
+      },
+      {
+        "en": "I want a banana.",
+        "ko": "바나나 원해요."
+      },
+      {
+        "en": "I want a toy.",
+        "ko": "장난감 원해요."
+      },
+      {
+        "en": "I want a doll.",
+        "ko": "인형 원해요."
+      },
+      {
+        "en": "I want a book.",
+        "ko": "책 원해요."
+      },
+      {
+        "en": "I want a pen.",
+        "ko": "펜 원해요."
+      },
+      {
+        "en": "I want a bag.",
+        "ko": "가방 원해요."
+      },
+      {
+        "en": "I want to play.",
+        "ko": "놀고 싶어요."
+      },
+      {
+        "en": "I want to eat.",
+        "ko": "먹고 싶어요."
+      },
+      {
+        "en": "I want to sleep.",
+        "ko": "자고 싶어요."
+      },
+      {
+        "en": "I want to drink.",
+        "ko": "마시고 싶어요."
+      },
+      {
+        "en": "I want to run.",
+        "ko": "뛰고 싶어요."
+      },
+      {
+        "en": "I want to jump.",
+        "ko": "점프하고 싶어요."
+      },
+      {
+        "en": "I want to swim.",
+        "ko": "수영하고 싶어요."
+      },
+      {
+        "en": "I want to read.",
+        "ko": "읽고 싶어요."
+      },
+      {
+        "en": "I want to go home.",
+        "ko": "집에 가고 싶어요."
+      },
+      {
+        "en": "I want to watch TV.",
+        "ko": "TV 보고 싶어요."
+      },
+      {
+        "en": "I want to apologize.",
+        "ko": "사과하고 싶어요."
+      },
+      {
+        "en": "I want to try.",
+        "ko": "해보고 싶어요."
+      },
+      {
+        "en": "I don't want to go.",
+        "ko": "가기 싫어요."
+      },
+      {
+        "en": "I don't want to sleep.",
+        "ko": "자기 싫어요."
+      },
+      {
+        "en": "I need help.",
+        "ko": "도움이 필요해요."
+      },
+      {
+        "en": "I need help, please.",
+        "ko": "제발 도와주세요."
+      },
+      {
+        "en": "I need some water.",
+        "ko": "물이 좀 필요해요."
+      },
+      {
+        "en": "I need a pencil.",
+        "ko": "연필이 필요해요."
+      },
+      {
+        "en": "I need an eraser.",
+        "ko": "지우개가 필요해요."
+      },
+      {
+        "en": "I need a book.",
+        "ko": "책이 필요해요."
+      },
+      {
+        "en": "I need a notebook.",
+        "ko": "공책이 필요해요."
+      },
+      {
+        "en": "I need some rest.",
+        "ko": "휴식이 좀 필요해요."
+      },
+      {
+        "en": "I need time.",
+        "ko": "시간이 필요해요."
+      },
+      {
+        "en": "I need money.",
+        "ko": "돈이 필요해요."
+      },
+      {
+        "en": "I need to go.",
+        "ko": "가야 해요."
+      },
+      {
+        "en": "I need to sleep.",
+        "ko": "자야 해요."
+      },
+      {
+        "en": "I need to eat.",
+        "ko": "먹어야 해요."
+      },
+      {
+        "en": "I need to wash.",
+        "ko": "씻어야 해요."
+      },
+      {
+        "en": "I need to clean.",
+        "ko": "청소해야 해요."
+      },
+      {
+        "en": "I need to study.",
+        "ko": "공부해야 해요."
+      },
+      {
+        "en": "I need to learn.",
+        "ko": "배워야 해요."
+      },
+      {
+        "en": "I have a book.",
+        "ko": "나는 책이 있어요."
+      },
+      {
+        "en": "I have a pen.",
+        "ko": "나는 펜이 있어요."
+      },
+      {
+        "en": "I have a question.",
+        "ko": "질문이 있어요."
+      },
+      {
+        "en": "I have a problem.",
+        "ko": "문제가 있어요."
+      },
+      {
+        "en": "I have a cold.",
+        "ko": "감기에 걸렸어요."
+      },
+      {
+        "en": "I have a headache.",
+        "ko": "머리가 아파요."
+      },
+      {
+        "en": "I have homework.",
+        "ko": "숙제가 있어요."
+      },
+      {
+        "en": "I have something to do.",
+        "ko": "나 할 일이 있어."
+      },
+      {
+        "en": "I have something to tell you.",
+        "ko": "너한테 할 말이 있어."
+      }
+    ]
+  },
+  {
+    "title": "과거와 미래 표현 (I did / I will)",
+    "sentences": [
+      {
+        "en": "I did it.",
+        "ko": "내가 했어요."
+      },
+      {
+        "en": "I didn't do it.",
+        "ko": "나 안 했어요."
+      },
+      {
+        "en": "I didn't mean to.",
+        "ko": "고의가 아니었어요."
+      },
+      {
+        "en": "I got it.",
+        "ko": "알았어요 / 찾았어요."
+      },
+      {
+        "en": "I got it right.",
+        "ko": "정답을 맞췄어요."
+      },
+      {
+        "en": "I got an A.",
+        "ko": "A를 받았어요."
+      },
+      {
+        "en": "I saw it first.",
+        "ko": "내가 먼저 봤어요."
+      },
+      {
+        "en": "I heard it.",
+        "ko": "들었어요."
+      },
+      {
+        "en": "I found it.",
+        "ko": "찾았어요."
+      },
+      {
+        "en": "I lost it.",
+        "ko": "잃어버렸어요."
+      },
+      {
+        "en": "I lost my phone.",
+        "ko": "내 폰을 잃어버렸어요."
+      },
+      {
+        "en": "I dropped it.",
+        "ko": "떨어뜨렸어요."
+      },
+      {
+        "en": "I forgot.",
+        "ko": "깜빡했어요."
+      },
+      {
+        "en": "I forgot my homework.",
+        "ko": "숙제를 깜빡했어요."
+      },
+      {
+        "en": "I made a mistake.",
+        "ko": "내가 실수했어요."
+      },
+      {
+        "en": "I cleaned my room.",
+        "ko": "방 청소를 다 했어요."
+      },
+      {
+        "en": "I bought this.",
+        "ko": "나 이거 샀어요."
+      },
+      {
+        "en": "I finished it.",
+        "ko": "다 끝냈어요."
+      },
+      {
+        "en": "I won.",
+        "ko": "내가 이겼어요."
+      },
+      {
+        "en": "I lost.",
+        "ko": "내가 졌어요."
+      },
+      {
+        "en": "I will go.",
+        "ko": "내가 갈게요."
+      },
+      {
+        "en": "I will do it.",
+        "ko": "내가 할게요."
+      },
+      {
+        "en": "I will try.",
+        "ko": "해볼게요."
+      },
+      {
+        "en": "I'll be there.",
+        "ko": "그곳에 갈게요."
+      },
+      {
+        "en": "I will help you.",
+        "ko": "도와줄게요."
+      },
+      {
+        "en": "I will show you.",
+        "ko": "보여줄게요."
+      },
+      {
+        "en": "I'll think about it.",
+        "ko": "생각해 볼게요."
+      },
+      {
+        "en": "I'll take it.",
+        "ko": "이걸로 할게요."
+      },
+      {
+        "en": "I am going to sleep.",
+        "ko": "나 잘 거야."
+      },
+      {
+        "en": "I am going to play.",
+        "ko": "나 놀 거야."
+      },
+      {
+        "en": "I am going to eat.",
+        "ko": "나 먹을 거야."
+      },
+      {
+        "en": "I am going to study.",
+        "ko": "나 공부할 거야."
+      },
+      {
+        "en": "I am going to school.",
+        "ko": "나 학교 갈 거야."
+      },
+      {
+        "en": "You win.",
+        "ko": "네가 이겼어."
+      },
+      {
+        "en": "You cheated.",
+        "ko": "너 반칙했어."
+      },
+      {
+        "en": "You did a good job.",
+        "ko": "잘했어."
+      },
+      {
+        "en": "You did well.",
+        "ko": "잘했어."
+      },
+      {
+        "en": "We won.",
+        "ko": "우리가 이겼어."
+      },
+      {
+        "en": "We lost.",
+        "ko": "우리가 졌어."
+      },
+      {
+        "en": "It was fun.",
+        "ko": "재밌었어."
+      },
+      {
+        "en": "It was easy.",
+        "ko": "쉬웠어."
+      },
+      {
+        "en": "It was hard.",
+        "ko": "어려웠어."
+      },
+      {
+        "en": "That was close.",
+        "ko": "아슬아슬했어."
+      },
+      {
+        "en": "That was cool.",
+        "ko": "멋졌어."
+      },
+      {
+        "en": "I promise.",
+        "ko": "약속해."
+      },
+      {
+        "en": "Pinky promise.",
+        "ko": "새끼손가락 걸고 약속해."
+      },
+      {
+        "en": "I trust you.",
+        "ko": "널 믿어."
+      },
+      {
+        "en": "I agree.",
+        "ko": "동의해."
+      },
+      {
+        "en": "I understand.",
+        "ko": "이해해."
+      },
+      {
+        "en": "I know.",
+        "ko": "나도 알아."
+      }
+    ]
+  },
+  {
+    "title": "질문하기 1 - 상태와 의향 (Are you / Do you)",
+    "sentences": [
+      {
+        "en": "Are you okay?",
+        "ko": "괜찮아?"
+      },
+      {
+        "en": "Are you sure?",
+        "ko": "확실해?"
+      },
+      {
+        "en": "Are you ready?",
+        "ko": "준비됐어?"
+      },
+      {
+        "en": "Are you happy?",
+        "ko": "기분 좋아?"
+      },
+      {
+        "en": "Are you sad?",
+        "ko": "슬퍼?"
+      },
+      {
+        "en": "Are you hungry?",
+        "ko": "배고파?"
+      },
+      {
+        "en": "Are you full?",
+        "ko": "배불러?"
+      },
+      {
+        "en": "Are you tired?",
+        "ko": "피곤해?"
+      },
+      {
+        "en": "Are you busy?",
+        "ko": "바빠?"
+      },
+      {
+        "en": "Are you sick?",
+        "ko": "아파?"
+      },
+      {
+        "en": "Are you mad?",
+        "ko": "화났어?"
+      },
+      {
+        "en": "Are you scared?",
+        "ko": "무서워?"
+      },
+      {
+        "en": "Are you excited?",
+        "ko": "신나?"
+      },
+      {
+        "en": "Are you sleepy?",
+        "ko": "졸려?"
+      },
+      {
+        "en": "Are you cold?",
+        "ko": "추워?"
+      },
+      {
+        "en": "Do you like apples?",
+        "ko": "사과 좋아해?"
+      },
+      {
+        "en": "Do you like movies?",
+        "ko": "영화 좋아해?"
+      },
+      {
+        "en": "Do you like music?",
+        "ko": "음악 좋아해?"
+      },
+      {
+        "en": "Do you like sports?",
+        "ko": "운동 좋아해?"
+      },
+      {
+        "en": "Do you like school?",
+        "ko": "학교 좋아해?"
+      },
+      {
+        "en": "Do you like games?",
+        "ko": "게임 좋아해?"
+      },
+      {
+        "en": "Do you want to play?",
+        "ko": "놀고 싶어?"
+      },
+      {
+        "en": "Do you want to eat?",
+        "ko": "먹고 싶어?"
+      },
+      {
+        "en": "Do you want to sleep?",
+        "ko": "자고 싶어?"
+      },
+      {
+        "en": "Do you know her?",
+        "ko": "그녀를 알아?"
+      },
+      {
+        "en": "Do you know him?",
+        "ko": "그를 알아?"
+      },
+      {
+        "en": "Do you understand?",
+        "ko": "이해돼?"
+      },
+      {
+        "en": "Did you see that?",
+        "ko": "저거 봤어?"
+      },
+      {
+        "en": "Did you eat?",
+        "ko": "밥 먹었어?"
+      },
+      {
+        "en": "Did you sleep well?",
+        "ko": "잘 잤어?"
+      },
+      {
+        "en": "Did you wash?",
+        "ko": "씻었어?"
+      },
+      {
+        "en": "Did you do your homework?",
+        "ko": "숙제했어?"
+      },
+      {
+        "en": "Did you get it?",
+        "ko": "이해했어?"
+      },
+      {
+        "en": "Can you hear me?",
+        "ko": "내 목소리 들려?"
+      },
+      {
+        "en": "Can you see this?",
+        "ko": "이거 보여?"
+      },
+      {
+        "en": "Can you help me?",
+        "ko": "나 좀 도와줄래?"
+      },
+      {
+        "en": "Can you show me?",
+        "ko": "나한테 보여줄래?"
+      },
+      {
+        "en": "Can you check this?",
+        "ko": "이것 좀 확인해줄래?"
+      },
+      {
+        "en": "Can you open the door?",
+        "ko": "문 좀 열어줄래?"
+      },
+      {
+        "en": "Can you wait for me?",
+        "ko": "날 기다려줄래?"
+      },
+      {
+        "en": "How are you?",
+        "ko": "어떻게 지내?"
+      },
+      {
+        "en": "How do you feel?",
+        "ko": "기분이 어때?"
+      },
+      {
+        "en": "How old are you?",
+        "ko": "몇 살이야?"
+      },
+      {
+        "en": "How much is this?",
+        "ko": "이거 얼마예요?"
+      },
+      {
+        "en": "How did you do that?",
+        "ko": "그거 어떻게 했어?"
+      },
+      {
+        "en": "How is the weather?",
+        "ko": "날씨 어때?"
+      },
+      {
+        "en": "Is everyone here?",
+        "ko": "다 왔나요?"
+      },
+      {
+        "en": "Is it yours?",
+        "ko": "이거 네 거야?"
+      },
+      {
+        "en": "Is it true?",
+        "ko": "이거 진짜야?"
+      },
+      {
+        "en": "Is it easy?",
+        "ko": "이거 쉬워?"
+      }
+    ]
+  },
+  {
+    "title": "질문하기 2 - 정보 묻기 (What / Where / Who / Why)",
+    "sentences": [
+      {
+        "en": "What is this?",
+        "ko": "이게 뭐야?"
+      },
+      {
+        "en": "What is that?",
+        "ko": "저게 뭐야?"
+      },
+      {
+        "en": "What is your name?",
+        "ko": "이름이 뭐야?"
+      },
+      {
+        "en": "What is your hobby?",
+        "ko": "취미가 뭐야?"
+      },
+      {
+        "en": "What is for dinner?",
+        "ko": "저녁 메뉴는 뭐야?"
+      },
+      {
+        "en": "What is the answer?",
+        "ko": "정답이 뭐야?"
+      },
+      {
+        "en": "What time is it?",
+        "ko": "지금 몇 시야?"
+      },
+      {
+        "en": "What page are we on?",
+        "ko": "지금 몇 쪽이야?"
+      },
+      {
+        "en": "What are you doing?",
+        "ko": "뭐 하고 있어?"
+      },
+      {
+        "en": "What did you say?",
+        "ko": "뭐라고 말했어?"
+      },
+      {
+        "en": "What's going on?",
+        "ko": "무슨 일이야?"
+      },
+      {
+        "en": "What's wrong?",
+        "ko": "뭐가 문제야?"
+      },
+      {
+        "en": "What's that smell?",
+        "ko": "무슨 냄새야?"
+      },
+      {
+        "en": "What happened?",
+        "ko": "무슨 일 있었어?"
+      },
+      {
+        "en": "What's your plan?",
+        "ko": "네 계획이 뭐야?"
+      },
+      {
+        "en": "What's your opinion?",
+        "ko": "네 생각은 어때?"
+      },
+      {
+        "en": "What's your favorite color?",
+        "ko": "가장 좋아하는 색은 뭐야?"
+      },
+      {
+        "en": "Where are you?",
+        "ko": "너 어디야?"
+      },
+      {
+        "en": "Where is it?",
+        "ko": "그거 어디 있어?"
+      },
+      {
+        "en": "Where are you going?",
+        "ko": "어디 가?"
+      },
+      {
+        "en": "Where are you from?",
+        "ko": "어디서 왔어?"
+      },
+      {
+        "en": "Where do you live?",
+        "ko": "어디 살아?"
+      },
+      {
+        "en": "Where is my book?",
+        "ko": "내 책 어디 있지?"
+      },
+      {
+        "en": "Where is my bag?",
+        "ko": "내 가방 어디 있지?"
+      },
+      {
+        "en": "Where is my mom?",
+        "ko": "우리 엄마 어디 있지?"
+      },
+      {
+        "en": "Where is the bathroom?",
+        "ko": "화장실이 어디예요?"
+      },
+      {
+        "en": "Who are you?",
+        "ko": "누구세요?"
+      },
+      {
+        "en": "Who is he?",
+        "ko": "그는 누구야?"
+      },
+      {
+        "en": "Who is she?",
+        "ko": "그녀는 누구야?"
+      },
+      {
+        "en": "Who is that?",
+        "ko": "저 사람 누구야?"
+      },
+      {
+        "en": "Who is your friend?",
+        "ko": "누가 네 친구야?"
+      },
+      {
+        "en": "Who is your teacher?",
+        "ko": "누가 선생님이야?"
+      },
+      {
+        "en": "Who did this?",
+        "ko": "이거 누가 했어?"
+      },
+      {
+        "en": "Who won?",
+        "ko": "누가 이겼어?"
+      },
+      {
+        "en": "Who lost?",
+        "ko": "누가 졌어?"
+      },
+      {
+        "en": "Why?",
+        "ko": "왜?"
+      },
+      {
+        "en": "Why not?",
+        "ko": "왜 안 돼?"
+      },
+      {
+        "en": "When is your birthday?",
+        "ko": "네 생일은 언제야?"
+      },
+      {
+        "en": "Which one?",
+        "ko": "어느 것?"
+      },
+      {
+        "en": "Which is better?",
+        "ko": "어느 게 더 좋아?"
+      },
+      {
+        "en": "Whose is this?",
+        "ko": "이거 누구 거야?"
+      },
+      {
+        "en": "Whose turn is it?",
+        "ko": "누구 차례야?"
+      },
+      {
+        "en": "How many?",
+        "ko": "몇 개야?"
+      },
+      {
+        "en": "How long?",
+        "ko": "얼마나 걸려?"
+      },
+      {
+        "en": "How far?",
+        "ko": "얼마나 멀어?"
+      },
+      {
+        "en": "How much?",
+        "ko": "얼마야?"
+      },
+      {
+        "en": "How come?",
+        "ko": "어째서?"
+      },
+      {
+        "en": "What do we do next?",
+        "ko": "다음엔 뭐 해요?"
+      },
+      {
+        "en": "Who wants to read first?",
+        "ko": "누가 먼저 읽을래?"
+      },
+      {
+        "en": "Any questions?",
+        "ko": "질문 있나요?"
+      }
+    ]
+  },
+  {
+    "title": "허락 구하기와 부탁하기 (Can I / Can you)",
+    "sentences": [
+      {
+        "en": "Can I go?",
+        "ko": "가도 돼요?"
+      },
+      {
+        "en": "Can I come too?",
+        "ko": "나도 가도 돼?"
+      },
+      {
+        "en": "Can I play?",
+        "ko": "나도 놀아도 돼?"
+      },
+      {
+        "en": "Can I eat this?",
+        "ko": "이거 먹어도 돼요?"
+      },
+      {
+        "en": "Can I drink this?",
+        "ko": "이거 마셔도 돼요?"
+      },
+      {
+        "en": "Can I sit here?",
+        "ko": "여기 앉아도 돼?"
+      },
+      {
+        "en": "Can I stand here?",
+        "ko": "여기 서 있어도 돼요?"
+      },
+      {
+        "en": "Can I watch TV?",
+        "ko": "TV 봐도 돼요?"
+      },
+      {
+        "en": "Can I have a snack?",
+        "ko": "간식 먹어도 돼요?"
+      },
+      {
+        "en": "Can I have some water?",
+        "ko": "물 좀 마셔도 돼요?"
+      },
+      {
+        "en": "Can I have some juice?",
+        "ko": "주스 좀 마셔도 돼요?"
+      },
+      {
+        "en": "Can I have some milk?",
+        "ko": "우유 좀 마셔도 돼요?"
+      },
+      {
+        "en": "Can I try it?",
+        "ko": "내가 해봐도 돼?"
+      },
+      {
+        "en": "Can I try it on?",
+        "ko": "입어봐도 돼요?"
+      },
+      {
+        "en": "Can I go to the bathroom?",
+        "ko": "화장실 가도 돼요?"
+      },
+      {
+        "en": "Can I ask a question?",
+        "ko": "질문해도 돼요?"
+      },
+      {
+        "en": "Can I borrow your pen?",
+        "ko": "펜 좀 빌려도 돼?"
+      },
+      {
+        "en": "Can I borrow your book?",
+        "ko": "책 좀 빌려도 돼?"
+      },
+      {
+        "en": "Can I borrow your eraser?",
+        "ko": "지우개 좀 빌려도 돼?"
+      },
+      {
+        "en": "Can I join?",
+        "ko": "나도 껴도 돼?"
+      },
+      {
+        "en": "May I come in?",
+        "ko": "들어가도 될까요?"
+      },
+      {
+        "en": "May I ask?",
+        "ko": "물어봐도 될까요?"
+      },
+      {
+        "en": "May I have a receipt?",
+        "ko": "영수증 주시겠어요?"
+      },
+      {
+        "en": "Can you help me?",
+        "ko": "도와줄래?"
+      },
+      {
+        "en": "Can you show me?",
+        "ko": "보여줄래?"
+      },
+      {
+        "en": "Can you check this?",
+        "ko": "이것 좀 확인해 줄래?"
+      },
+      {
+        "en": "Can you do this?",
+        "ko": "이거 할 수 있어?"
+      },
+      {
+        "en": "Can you see this?",
+        "ko": "이거 보여?"
+      },
+      {
+        "en": "Can you hear me?",
+        "ko": "내 말 들려?"
+      },
+      {
+        "en": "Can you pass the salt?",
+        "ko": "소금 좀 건네줄래?"
+      },
+      {
+        "en": "Can you read this?",
+        "ko": "이거 읽을 수 있어?"
+      },
+      {
+        "en": "Can you write this?",
+        "ko": "이거 쓸 수 있어?"
+      },
+      {
+        "en": "Can you open the door?",
+        "ko": "문 좀 열어줄래?"
+      },
+      {
+        "en": "Can you close the door?",
+        "ko": "문 좀 닫아줄래?"
+      },
+      {
+        "en": "Can you turn on the light?",
+        "ko": "불 좀 켜줄래?"
+      },
+      {
+        "en": "Can you turn off the light?",
+        "ko": "불 좀 꺼줄래?"
+      },
+      {
+        "en": "Can you wait for me?",
+        "ko": "나 좀 기다려줄래?"
+      },
+      {
+        "en": "Can you come here?",
+        "ko": "이리 좀 올래?"
+      },
+      {
+        "en": "Can you sing?",
+        "ko": "노래 부를 수 있어?"
+      },
+      {
+        "en": "Can you dance?",
+        "ko": "춤출 수 있어?"
+      },
+      {
+        "en": "Can you run fast?",
+        "ko": "빨리 뛸 수 있어?"
+      },
+      {
+        "en": "Can you jump high?",
+        "ko": "높이 뛸 수 있어?"
+      },
+      {
+        "en": "Can you swim?",
+        "ko": "수영할 수 있어?"
+      },
+      {
+        "en": "Could you help me?",
+        "ko": "도와주시겠어요?"
+      },
+      {
+        "en": "Could you repeat that?",
+        "ko": "다시 말씀해 주시겠어요?"
+      },
+      {
+        "en": "Could you speak louder?",
+        "ko": "크게 말씀해 주시겠어요?"
+      },
+      {
+        "en": "Please give me that.",
+        "ko": "저것 좀 주세요."
+      },
+      {
+        "en": "Please show me.",
+        "ko": "좀 보여주세요."
+      },
+      {
+        "en": "Please help me.",
+        "ko": "제발 도와주세요."
+      },
+      {
+        "en": "Please sit down.",
+        "ko": "앉으세요."
+      }
+    ]
+  },
+  {
+    "title": "제안하고 함께하기 (Let's...)",
+    "sentences": [
+      {
+        "en": "Let's go.",
+        "ko": "가자."
+      },
+      {
+        "en": "Let's play.",
+        "ko": "놀자."
+      },
+      {
+        "en": "Let's eat.",
+        "ko": "먹자."
+      },
+      {
+        "en": "Let's eat together.",
+        "ko": "같이 먹자."
+      },
+      {
+        "en": "Let's run.",
+        "ko": "뛰자."
+      },
+      {
+        "en": "Let's race.",
+        "ko": "달리기 하자."
+      },
+      {
+        "en": "Let's walk.",
+        "ko": "걷자."
+      },
+      {
+        "en": "Let's jump.",
+        "ko": "뛰어오르자."
+      },
+      {
+        "en": "Let's sing.",
+        "ko": "노래 부르자."
+      },
+      {
+        "en": "Let's dance.",
+        "ko": "춤추자."
+      },
+      {
+        "en": "Let's read.",
+        "ko": "읽자."
+      },
+      {
+        "en": "Let's write.",
+        "ko": "쓰자."
+      },
+      {
+        "en": "Let's study.",
+        "ko": "공부하자."
+      },
+      {
+        "en": "Let's learn.",
+        "ko": "배우자."
+      },
+      {
+        "en": "Let's draw.",
+        "ko": "그림 그리자."
+      },
+      {
+        "en": "Let's make a book.",
+        "ko": "책을 만들자."
+      },
+      {
+        "en": "Let's color.",
+        "ko": "색칠하자."
+      },
+      {
+        "en": "Let's start.",
+        "ko": "시작하자."
+      },
+      {
+        "en": "Let's stop.",
+        "ko": "그만하자."
+      },
+      {
+        "en": "Let's rest.",
+        "ko": "쉬자."
+      },
+      {
+        "en": "Let's take a break.",
+        "ko": "잠깐 쉬자."
+      },
+      {
+        "en": "Let's go home.",
+        "ko": "집에 가자."
+      },
+      {
+        "en": "Let's go outside.",
+        "ko": "밖에 나가자."
+      },
+      {
+        "en": "Let's go to school.",
+        "ko": "학교에 가자."
+      },
+      {
+        "en": "Let's go to the park.",
+        "ko": "공원에 가자."
+      },
+      {
+        "en": "Let's go shopping.",
+        "ko": "쇼핑 가자."
+      },
+      {
+        "en": "Let's go swimming.",
+        "ko": "수영하러 가자."
+      },
+      {
+        "en": "Let's go hiking.",
+        "ko": "등산 가자."
+      },
+      {
+        "en": "Let's play a game.",
+        "ko": "게임 하자."
+      },
+      {
+        "en": "Let's play soccer.",
+        "ko": "축구 하자."
+      },
+      {
+        "en": "Let's play baseball.",
+        "ko": "야구 하자."
+      },
+      {
+        "en": "Let's play together.",
+        "ko": "같이 놀자."
+      },
+      {
+        "en": "Let's be friends.",
+        "ko": "우리 친구 하자."
+      },
+      {
+        "en": "Let's share.",
+        "ko": "나눠 쓰자."
+      },
+      {
+        "en": "Let's help.",
+        "ko": "도와주자."
+      },
+      {
+        "en": "Let's see.",
+        "ko": "어디 보자."
+      },
+      {
+        "en": "Let's check.",
+        "ko": "확인해 보자."
+      },
+      {
+        "en": "Let's look.",
+        "ko": "보자."
+      },
+      {
+        "en": "Let's find out.",
+        "ko": "알아보자."
+      },
+      {
+        "en": "Let's meet tomorrow.",
+        "ko": "내일 만나자."
+      },
+      {
+        "en": "Let's hang out later.",
+        "ko": "나중에 놀자."
+      },
+      {
+        "en": "Let's watch TV.",
+        "ko": "TV 보자."
+      },
+      {
+        "en": "Let's watch a movie.",
+        "ko": "영화 보자."
+      },
+      {
+        "en": "Let's listen.",
+        "ko": "들어보자."
+      },
+      {
+        "en": "Let's talk.",
+        "ko": "이야기하자."
+      },
+      {
+        "en": "Let's try.",
+        "ko": "해 보자."
+      },
+      {
+        "en": "Let's try again.",
+        "ko": "다시 해보자."
+      },
+      {
+        "en": "Let's take turns.",
+        "ko": "번갈아 하자."
+      },
+      {
+        "en": "Let's take a picture.",
+        "ko": "사진 찍자."
+      },
+      {
+        "en": "Let's do it.",
+        "ko": "해보자/시작하자."
+      }
+    ]
+  },
+  {
+    "title": "행동 지시와 금지 (명령문 / Don't ~)",
+    "sentences": [
+      {
+        "en": "Come here.",
+        "ko": "이리 와."
+      },
+      {
+        "en": "Look at this.",
+        "ko": "이것 봐."
+      },
+      {
+        "en": "Look at me.",
+        "ko": "나를 봐."
+      },
+      {
+        "en": "Listen carefully.",
+        "ko": "잘 들어."
+      },
+      {
+        "en": "Say it again.",
+        "ko": "다시 말해줘."
+      },
+      {
+        "en": "Repeat after me.",
+        "ko": "나를 따라 해."
+      },
+      {
+        "en": "Try again.",
+        "ko": "다시 해 봐."
+      },
+      {
+        "en": "Stop it.",
+        "ko": "그만해."
+      },
+      {
+        "en": "Be quiet.",
+        "ko": "조용히 해."
+      },
+      {
+        "en": "Watch out.",
+        "ko": "조심해."
+      },
+      {
+        "en": "Hurry up.",
+        "ko": "서둘러."
+      },
+      {
+        "en": "Wait for me.",
+        "ko": "나 기다려."
+      },
+      {
+        "en": "Give it back.",
+        "ko": "돌려줘."
+      },
+      {
+        "en": "Open the door.",
+        "ko": "문을 열어."
+      },
+      {
+        "en": "Close the door.",
+        "ko": "문을 닫아."
+      },
+      {
+        "en": "Turn on the light.",
+        "ko": "불 켜."
+      },
+      {
+        "en": "Turn off the light.",
+        "ko": "불 꺼."
+      },
+      {
+        "en": "Turn left.",
+        "ko": "왼쪽으로 돌아."
+      },
+      {
+        "en": "Turn right.",
+        "ko": "오른쪽으로 돌아."
+      },
+      {
+        "en": "Take your time.",
+        "ko": "천천히 해."
+      },
+      {
+        "en": "Take it slow.",
+        "ko": "천천히 해."
+      },
+      {
+        "en": "Take a break.",
+        "ko": "잠깐 쉬어."
+      },
+      {
+        "en": "Take care.",
+        "ko": "잘 가/조심해."
+      },
+      {
+        "en": "Cheer up.",
+        "ko": "기운 내."
+      },
+      {
+        "en": "Calm down.",
+        "ko": "진정해."
+      },
+      {
+        "en": "Be careful.",
+        "ko": "조심해."
+      },
+      {
+        "en": "Push it.",
+        "ko": "밀어."
+      },
+      {
+        "en": "Pull it.",
+        "ko": "당겨."
+      },
+      {
+        "en": "Stand up.",
+        "ko": "일어나."
+      },
+      {
+        "en": "Sit down.",
+        "ko": "앉아."
+      },
+      {
+        "en": "Wash your hands.",
+        "ko": "손 씻어."
+      },
+      {
+        "en": "Brush your teeth.",
+        "ko": "양치해."
+      },
+      {
+        "en": "Clean your room.",
+        "ko": "방 치워."
+      },
+      {
+        "en": "Do your homework.",
+        "ko": "숙제해."
+      },
+      {
+        "en": "You go first.",
+        "ko": "네가 먼저 해."
+      },
+      {
+        "en": "Hang in there.",
+        "ko": "조금만 참아/힘내."
+      },
+      {
+        "en": "Don't do that.",
+        "ko": "그렇게 하지 마."
+      },
+      {
+        "en": "Don't touch that.",
+        "ko": "그거 만지지 마."
+      },
+      {
+        "en": "Don't worry.",
+        "ko": "걱정하지 마."
+      },
+      {
+        "en": "Don't run.",
+        "ko": "뛰지 마."
+      },
+      {
+        "en": "Don't cry.",
+        "ko": "울지 마."
+      },
+      {
+        "en": "Don't fight.",
+        "ko": "싸우지 마."
+      },
+      {
+        "en": "Don't be late.",
+        "ko": "늦지 마."
+      },
+      {
+        "en": "Don't forget.",
+        "ko": "잊지 마."
+      },
+      {
+        "en": "Don't give up.",
+        "ko": "포기하지 마."
+      },
+      {
+        "en": "Don't stop.",
+        "ko": "멈추지 마."
+      },
+      {
+        "en": "Leave me alone.",
+        "ko": "나 혼자 있게 해줘."
+      },
+      {
+        "en": "Don't be scared.",
+        "ko": "무서워하지 마."
+      },
+      {
+        "en": "Don't be mad.",
+        "ko": "화내지 마."
+      },
+      {
+        "en": "Don't be sad.",
+        "ko": "슬퍼하지 마."
+      }
+    ]
+  },
+  {
+    "title": "상황 표현 및 짧은 일상 리액션 (It is / This is 외)",
+    "sentences": [
+      {
+        "en": "It is my turn.",
+        "ko": "내 차례야."
+      },
+      {
+        "en": "That's not fair.",
+        "ko": "그건 불공평해."
+      },
+      {
+        "en": "This is mine.",
+        "ko": "이건 내 거야."
+      },
+      {
+        "en": "That is yours.",
+        "ko": "저건 네 거야."
+      },
+      {
+        "en": "It looks great.",
+        "ko": "멋져 보여."
+      },
+      {
+        "en": "It's too noisy.",
+        "ko": "너무 시끄러워."
+      },
+      {
+        "en": "That's so cute.",
+        "ko": "너무 귀엽다."
+      },
+      {
+        "en": "It's quite expensive.",
+        "ko": "꽤 비싸네."
+      },
+      {
+        "en": "Time flies.",
+        "ko": "시간 참 빠르다."
+      },
+      {
+        "en": "It's raining.",
+        "ko": "비가 와."
+      },
+      {
+        "en": "It's snowing.",
+        "ko": "눈이 와."
+      },
+      {
+        "en": "It's too far.",
+        "ko": "너무 멀어."
+      },
+      {
+        "en": "It's too close.",
+        "ko": "너무 가까워."
+      },
+      {
+        "en": "This is easy.",
+        "ko": "이건 쉬워."
+      },
+      {
+        "en": "That is too hard.",
+        "ko": "저건 너무 어려워."
+      },
+      {
+        "en": "Hi there.",
+        "ko": "안녕."
+      },
+      {
+        "en": "See you tomorrow.",
+        "ko": "내일 봐."
+      },
+      {
+        "en": "Have fun.",
+        "ko": "재밌게 놀아."
+      },
+      {
+        "en": "Thank you.",
+        "ko": "고마워."
+      },
+      {
+        "en": "You're welcome.",
+        "ko": "천만에."
+      },
+      {
+        "en": "Excuse me.",
+        "ko": "실례합니다."
+      },
+      {
+        "en": "I'm sorry.",
+        "ko": "미안해."
+      },
+      {
+        "en": "No problem.",
+        "ko": "문제없어/괜찮아."
+      },
+      {
+        "en": "That's okay.",
+        "ko": "괜찮아."
+      },
+      {
+        "en": "No worries.",
+        "ko": "걱정 마."
+      },
+      {
+        "en": "Of course.",
+        "ko": "물론이지."
+      },
+      {
+        "en": "Me too.",
+        "ko": "나도."
+      },
+      {
+        "en": "You too.",
+        "ko": "너도."
+      },
+      {
+        "en": "Really?",
+        "ko": "진짜?"
+      },
+      {
+        "en": "Awesome!",
+        "ko": "대박!"
+      },
+      {
+        "en": "Oops!",
+        "ko": "이런!"
+      },
+      {
+        "en": "Uh-oh.",
+        "ko": "어오/안 돼."
+      },
+      {
+        "en": "Yay!",
+        "ko": "야호!"
+      },
+      {
+        "en": "No way!",
+        "ko": "절대 안 돼!"
+      },
+      {
+        "en": "Just kidding.",
+        "ko": "장난이야."
+      },
+      {
+        "en": "Whatever.",
+        "ko": "알아서 해/뭐든."
+      },
+      {
+        "en": "Not yet.",
+        "ko": "아직 아니야."
+      },
+      {
+        "en": "Guess what?",
+        "ko": "있잖아/맞춰봐."
+      },
+      {
+        "en": "Hold on.",
+        "ko": "잠깐만."
+      },
+      {
+        "en": "Good luck.",
+        "ko": "행운을 빌어."
+      },
+      {
+        "en": "Sounds good.",
+        "ko": "좋아/그렇게 하자."
+      },
+      {
+        "en": "Not bad.",
+        "ko": "나쁘지 않네."
+      },
+      {
+        "en": "Exactly!",
+        "ko": "바로 그거야!"
+      },
+      {
+        "en": "Come on!",
+        "ko": "에이 왜 그래/빨리!"
+      },
+      {
+        "en": "I see.",
+        "ko": "알겠어."
+      },
+      {
+        "en": "Never mind.",
+        "ko": "신경 쓰지 마."
+      },
+      {
+        "en": "Here you are.",
+        "ko": "여기 있어."
+      },
+      {
+        "en": "Enjoy your meal.",
+        "ko": "맛있게 먹어."
+      },
+      {
+        "en": "It doesn't matter.",
+        "ko": "상관없어."
+      },
+      {
+        "en": "Good job!",
+        "ko": "잘했어!"
+      }
+    ]
+  }
+]
