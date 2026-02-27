@@ -88,8 +88,8 @@ export default function AlphabetWriting() {
     };
 
     const handleDone = () => {
-        // Play TTS sound
-        const utterance = new SpeechSynthesisUtterance(currentLetter);
+        // Play TTS sound. Convert to uppercase so the letter name is read clearly (e.g., 'a' -> 'A' -> "Ay")
+        const utterance = new SpeechSynthesisUtterance(currentLetter.toUpperCase());
         utterance.lang = 'en-US';
         speechSynthesis.speak(utterance);
 
