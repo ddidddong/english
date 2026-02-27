@@ -6,6 +6,18 @@
     flex-direction: column;
     gap: 1.5rem;
     padding-bottom: 2rem;
+    position: relative;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--primary);
+    transform-origin: 0%;
+    z-index: 1000;
 }
 
 .section-title {
