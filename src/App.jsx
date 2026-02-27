@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import GNB from './components/GNB';
 import WordCard from './components/WordCard';
 import PatternPlay from './components/PatternPlay';
 import QuizBlock from './components/QuizBlock';
+import AlphabetWriting from './components/AlphabetWriting';
 import './index.css';
 
 const DAILY_WORDS = [
@@ -44,6 +46,7 @@ const DAILY_WORDS = [
 
 function App() {
     const [streak, setStreak] = useState(0);
+    const [activeTab, setActiveTab] = useState('word');
 
     // Simple Streak implementation
     useEffect(() => {
@@ -76,32 +79,62 @@ function App() {
 
     return (
         <div className="app-container">
+            <GNB activeTab={activeTab} setActiveTab={setActiveTab} />
+
             <header className="header">
-                <h1>Daily Snap</h1>
+                <div className="title-wrapper">
+                    <h1>Daily Snap</h1>
+                    <p className="subtitle-ko">매일매일 재미있는 영어 습관</p>
+                </div>
                 <div className="day-streak">
                     🔥 {streak} Day{streak !== 1 ? 's' : ''}
                 </div>
             </header>
 
             <main className="main-content">
-                <section className="word-section">
-                    <h2 className="section-title">Word of the Day</h2>
-                    <div className="word-cards-container">
-                        {DAILY_WORDS.map((word) => (
-                            <WordCard key={word.id} wordData={word} />
-                        ))}
-                    </div>
-                </section>
+                {activeTab === 'word' && (
+                    <section className="feature-section">
+                        <div className="section-header">
+                            <h2 className="section-title">Word of the Day</h2>
+                            <p className="section-desc-ko">카드를 클릭해 발음을 듣고 뒷면의 예문을 확인해보세요!</p>
+                        </div>
+                        <div className="word-cards-container">
+                            {DAILY_WORDS.map((word) => (
+                                <WordCard key={word.id} wordData={word} />
+                            ))}
+                        </div>
+                    </section>
+                )}
 
-                <section className="pattern-section">
-                    <h2 className="section-title">Pattern Play</h2>
-                    <PatternPlay />
-                </section>
+                {activeTab === 'pattern' && (
+                    <section className="feature-section">
+                        <div className="section-header">
+                            <h2 className="section-title">Pattern Play</h2>
+                            <p className="section-desc-ko">빈칸에 알맞은 단어를 넣어 문장을 완성해보세요!</p>
+                        </div>
+                        <PatternPlay />
+                    </section>
+                )}
 
-                <section className="quiz-section">
-                    <h2 className="section-title">Sentence Quiz</h2>
-                    <QuizBlock />
-                </section>
+                {activeTab === 'quiz' && (
+                    <section className="feature-section">
+                        <div className="section-header">
+                            <h2 className="section-title">Sentence Quiz</h2>
+                            <p className="section-desc-ko">흩어진 단어 블록을 순서대로 눌러서 문장을 조립해보세요!</p>
+                        </div>
+                        <QuizBlock />
+                    </section>
+                )}
+
+                {activeTab === 'alphabet' && (
+                    <section className="feature-section">
+                        <div className="section-header">
+                            <h2 className="section-title">Alphabet Writing</h2>
+                            <p className="section-desc-ko">화면을 드래그하여 대문자와 소문자 알파벳을 적어보세요!</p>
+                        </div>
+                        <AlphabetWriting />
+                    </section>
+                )}
             </main>
         </div>
     )
