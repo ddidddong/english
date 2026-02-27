@@ -4,6 +4,14 @@ import './AlphabetWriting.css';
 // Pre-define some target letters for tracing
 const LETTERS = ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e'];
 
+const PRONUNCIATION_MAP = {
+    'A': 'ay', 'a': 'ay',
+    'B': 'bee', 'b': 'bee',
+    'C': 'see', 'c': 'see',
+    'D': 'dee', 'd': 'dee',
+    'E': 'ee', 'e': 'ee'
+};
+
 export default function AlphabetWriting() {
     const canvasRef = useRef(null);
     const drawingTimeoutRef = useRef(null);
@@ -48,7 +56,7 @@ export default function AlphabetWriting() {
             drawingTimeoutRef.current = setTimeout(() => {
                 handleDone();
                 hasDrawnRef.current = false;
-            }, 1200);
+            }, 450);
         }
     };
 
@@ -113,8 +121,9 @@ export default function AlphabetWriting() {
     };
 
     const handleDone = () => {
-        // Play TTS sound. Convert to uppercase so the letter name is read clearly (e.g., 'a' -> 'A' -> "Ay")
-        const utterance = new SpeechSynthesisUtterance(currentLetter.toUpperCase());
+        // Play TTS sound using the phonetic map so it doesn't say "Capital A"
+        const textToRead = PRONUNCIATION_MAP[currentLetter] || currentLetter;
+        const utterance = new SpeechSynthesisUtterance(textToRead);
         utterance.lang = 'en-US';
         speechSynthesis.speak(utterance);
 
