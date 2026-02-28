@@ -13,13 +13,13 @@ export default function VocabularyBook() {
     const scrollContainerRef = useRef(null);
     const wordsContainerRef = useRef(null);
 
-    const activeCategory = wordsData[activeCategoryIndex];
+    const activeCategory = wordsData && wordsData.length > 0 ? wordsData[activeCategoryIndex] : null;
 
     // Filter words based on search query
-    const filteredWords = activeCategory.words.filter(word =>
+    const filteredWords = activeCategory ? activeCategory.words.filter(word =>
         word.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
         word.meaning.includes(searchQuery)
-    );
+    ) : [];
 
     // Auto-scroll the pattern tabs to the active item
     useEffect(() => {
@@ -71,6 +71,10 @@ export default function VocabularyBook() {
         hidden: { opacity: 0, y: 20 },
         show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300 } }
     };
+
+    if (!activeCategory) {
+        return <section className="feature-section vocabulary-section"><div className="section-header">Loading Vocabulary...</div></section>;
+    }
 
     return (
         <section className="feature-section vocabulary-section">
