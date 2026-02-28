@@ -17,7 +17,7 @@ export default function EssentialSentences() {
     const totalSentences = activePattern ? activePattern.sentences.length : 0;
 
     // Handle Manual Audio Playback
-    const handlePlayAudio = (text, index) => {
+    const handlePlayAudio = (enText, koText, index) => {
         if (!('speechSynthesis' in window)) return;
 
         window.speechSynthesis.cancel();
@@ -30,11 +30,20 @@ export default function EssentialSentences() {
 
         setPlayingSentenceIndex(index);
 
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US';
-        utterance.rate = 0.9;
+        const enUtterance = new SpeechSynthesisUtterance(enText);
+        enUtterance.lang = 'en-US';
+        enUtterance.rate = 0.9;
 
-        utterance.onend = () => {
+        const koUtterance = new SpeechSynthesisUtterance(koText);
+        koUtterance.lang = 'ko-KR';
+        koUtterance.rate = 0.95;
+
+        // Chain the audio: English -> Korean
+        enUtterance.onend = () => {
+            window.speechSynthesis.speak(koUtterance);
+        };
+
+        koUtterance.onend = () => {
             setPlayingSentenceIndex(null);
 
             // If Auto-Play is ON, move to next sentence
@@ -45,12 +54,15 @@ export default function EssentialSentences() {
             }
         };
 
-        utterance.onerror = () => {
+        const handleError = () => {
             setPlayingSentenceIndex(null);
             setIsAutoPlaying(false);
         };
 
-        window.speechSynthesis.speak(utterance);
+        enUtterance.onerror = handleError;
+        koUtterance.onerror = handleError;
+
+        window.speechSynthesis.speak(enUtterance);
     };
 
     // Auto-scroll the pattern tabs to the active item
@@ -73,7 +85,7 @@ export default function EssentialSentences() {
             const currentSentence = activePattern.sentences[activeSentenceIndex];
             // Small delay to allow the slide animation to start before speaking
             const initialDelay = setTimeout(() => {
-                handlePlayAudio(currentSentence.en, activeSentenceIndex);
+                handlePlayAudio(currentSentence.en, currentSentence.ko, activeSentenceIndex);
             }, 300);
             return () => clearTimeout(initialDelay);
         }
@@ -197,15 +209,19 @@ export default function EssentialSentences() {
 
                 <div className="pattern-tabs-wrapper">
                     <div className="pattern-tabs" ref={scrollContainerRef}>
-                        {sentencesData.map((pattern, idx) => (
-                            <button
-                                key={idx}
-                                className={`pattern-tab ${idx === activePatternIndex ? 'active' : ''}`}
-                                onClick={() => handlePatternChange(idx)}
-                            >
-                                패턴 {idx + 1}
-                            </button>
-                        ))}
+                        {sentencesData.map((pattern, idx) => {
+                            // Extract just the pattern part: "01. I am ~ (나는 ~이다)" -> "I am ~"
+                            const shortTitle = pattern.title.split('(')[0].replace(/^[0-9.]+\s*/, '').trim() || `패턴 ${idx + 1}`;
+                            return (
+                                <button
+                                    key={idx}
+                                    className={`pattern-tab ${idx === activePatternIndex ? 'active' : ''}`}
+                                    onClick={() => handlePatternChange(idx)}
+                                >
+                                    {shortTitle}
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -261,7 +277,7 @@ export default function EssentialSentences() {
                                     className={`audio-btn large ${playingSentenceIndex === activeSentenceIndex ? 'playing' : ''}`}
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        handlePlayAudio(currentItem.en, activeSentenceIndex);
+                                        handlePlayAudio(currentItem.en, currentItem.ko, activeSentenceIndex);
                                     }}
                                     title="듣기"
                                     aria-label="Play pronunciation"
