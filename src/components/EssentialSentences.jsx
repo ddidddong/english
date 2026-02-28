@@ -13,8 +13,8 @@ export default function EssentialSentences() {
     const scrollContainerRef = useRef(null);
     const autoPlayTimeoutRef = useRef(null);
 
-    const activePattern = sentencesData[activePatternIndex];
-    const totalSentences = activePattern.sentences.length;
+    const activePattern = sentencesData && sentencesData.length > 0 ? sentencesData[activePatternIndex] : null;
+    const totalSentences = activePattern ? activePattern.sentences.length : 0;
 
     // Handle Manual Audio Playback
     const handlePlayAudio = (text, index) => {
@@ -163,12 +163,16 @@ export default function EssentialSentences() {
     };
 
     // Render Previous, Current, and Next cards for visual context using absolute positioning
-    const prevItem = activeSentenceIndex > 0 ? activePattern.sentences[activeSentenceIndex - 1] : null;
-    const currentItem = activePattern.sentences[activeSentenceIndex];
-    const nextItem = activeSentenceIndex < totalSentences - 1 ? activePattern.sentences[activeSentenceIndex + 1] : null;
+    const prevItem = activePattern && activeSentenceIndex > 0 ? activePattern.sentences[activeSentenceIndex - 1] : null;
+    const currentItem = activePattern ? activePattern.sentences[activeSentenceIndex] : null;
+    const nextItem = activePattern && activeSentenceIndex < totalSentences - 1 ? activePattern.sentences[activeSentenceIndex + 1] : null;
 
     // Calculate progress fraction for the top bar
-    const progressPercent = ((activeSentenceIndex + 1) / totalSentences) * 100;
+    const progressPercent = totalSentences > 0 ? ((activeSentenceIndex + 1) / totalSentences) * 100 : 0;
+
+    if (!activePattern || !currentItem) {
+        return <div className="essential-container no-scroll">Loading sentences...</div>;
+    }
 
     return (
         <div className="essential-container no-scroll">
