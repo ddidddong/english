@@ -31,11 +31,11 @@ textbook(교과서), bookshelf(책장), break(쉬는시간), chalk(분필), chem
 ### 10. 장소, 교통, 자연 & 날씨 100 (Places, Transport, Nature, Weather)
 autumn(가을), spring(봄), summer(여름), winter(겨울), breeze(산들바람), bright(밝은), chilly(쌀쌀한), clear(맑은), cloudless(구름 없는), cloudy(흐린), cold(추운), damp(축축한), dry(건조한), dull(흐린/우중충한), foggy(안개 낀), freezing(몹시 추운), hail(우박), heat(열), hurricane(허리케인), lightning(번개), mild(온화한), mist(안개), rain(비), rainbow(무지개), shower(소나기), sky(하늘), snow(눈), storm(폭풍), sunny(화창한), warm(따뜻한), wet(젖은), wind(바람), village(마을), building(건물), flat(아파트), lift(엘리베이터), stairs(계단), hall(복도/홀), corridor(복도), living room(거실), dining-room(식당방), bedroom(침실), kitchen(주방), bathroom(욕실), balcony(발코니), ceiling(천장), floor(바닥), furniture(가구), garage(차고), airport(공항), station(역), bus(버스), taxi(택시), subway(지하철), flight(비행), journey(여행), trip(여행), ticket(표), platform(플랫폼), luggage(수하물), passport(여권), nature(자연), mountain(산), river(강), lake(호수), sea(바다), ocean(대양), forest(숲), field(들판), hill(언덕), sand(모래), stone(돌), earth(지구/땅), planet(행성), star(별), grass(풀), tree(나무), flower(꽃), leaf(잎), root(뿌리), wood(나무/목재), rock(바위), dirt(흙), mud(진흙), dust(먼지), bridge(다리), park(공원), market(시장), museum(박물관), theater(극장), cinema(영화관), hospital(병원), bank(은행), post office(우체국), factory(공장), church(교회), street(거리), road(길), highway(고속도로), traffic(교통).`;
 
-const lines = text.split('\\n');
+const lines = text.split('\n');
 const results = [];
 let currentCategory = null;
 
-const headerRegex = /^### \\d+\\. (.+)$/;
+const headerRegex = /^### \d+\. (.+)$/;
 
 lines.forEach(line => {
     line = line.trim();
@@ -57,7 +57,7 @@ lines.forEach(line => {
             // Just split by ", "
             const items = line.split(', ').filter(i => i.trim() !== '');
             items.forEach(item => {
-                const parts = item.match(/^(.+?)\\((.+?)\\)\\.?$/);
+                const parts = item.match(/^(.+?)\((.+?)\)\.?$/);
                 if (parts) {
                     currentCategory.words.push({
                         word: parts[1].trim(),
