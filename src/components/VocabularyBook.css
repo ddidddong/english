@@ -92,6 +92,10 @@
     .nav-arrow {
         display: none;
     }
+
+    .modal-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Custom scrollbar */
@@ -141,7 +145,7 @@
 .modal-content {
     background: white;
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     max-height: 85vh;
     border-radius: 20px;
     display: flex;
@@ -201,6 +205,10 @@
     flex: 1;
     overflow-y: auto;
     padding: 0 1.5rem 1.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    align-content: start;
 }
 
 .modal-list-item {
