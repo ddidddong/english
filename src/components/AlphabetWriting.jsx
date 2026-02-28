@@ -3,16 +3,7 @@ import Tesseract from 'tesseract.js';
 import './AlphabetWriting.css';
 import { LETTERS, STROKE_GUIDES, PRONUNCIATION_MAP } from '../data/strokeGuides';
 
-const INITIAL_FRIENDS = [
-    { id: 1, emoji: '🐶', x: 20, y: 20 },
-    { id: 2, emoji: '🐱', x: 380, y: 50 },
-    { id: 3, emoji: '🐥', x: 20, y: 350 },
-    { id: 4, emoji: '🐰', x: 380, y: 300 },
-    { id: 5, emoji: '🐻', x: 200, y: 30 }
-];
-
 export default function AlphabetWriting() {
-    const containerRef = useRef(null);
     const canvasRef = useRef(null);
     const drawingTimeoutRef = useRef(null);
     const hasDrawnRef = useRef(false);
@@ -24,10 +15,6 @@ export default function AlphabetWriting() {
     const [isFlashing, setIsFlashing] = useState(false);
     const [showStamp, setShowStamp] = useState(false);
     const [isRecognizing, setIsRecognizing] = useState(false);
-
-    // Friend Drag State
-    const [friends, setFriends] = useState(INITIAL_FRIENDS);
-    const [draggingFriendId, setDraggingFriendId] = useState(null);
 
     const currentLetter = LETTERS[currentLetterIndex];
 
@@ -130,36 +117,6 @@ export default function AlphabetWriting() {
         // mouse events
         return { offsetX: event.nativeEvent.offsetX, offsetY: event.nativeEvent.offsetY };
     };
-
-    // ----- Friends Dragging Logic -----
-    const handleFriendDragStart = (e, id) => {
-        // Prevent canvas drawing when clicking a friend
-        e.stopPropagation();
-        setDraggingFriendId(id);
-    };
-
-    const handleContainerMouseMove = (e) => {
-        if (!draggingFriendId || !containerRef.current) return;
-        e.preventDefault(); // Prevent scrolling while dragging friend
-
-        const bcr = containerRef.current.getBoundingClientRect();
-        // Support both mouse and touch events
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-
-        // Center the 40px emoji
-        const x = clientX - bcr.x - 20;
-        const y = clientY - bcr.y - 20;
-
-        setFriends(prev => prev.map(f => f.id === draggingFriendId ? { ...f, x, y } : f));
-    };
-
-    const handleContainerMouseUp = () => {
-        if (draggingFriendId) {
-            setDraggingFriendId(null);
-        }
-    };
-    // ----------------------------------
 
     const clearCanvas = () => {
         if (drawingTimeoutRef.current) clearTimeout(drawingTimeoutRef.current);
@@ -338,27 +295,7 @@ export default function AlphabetWriting() {
     }, [currentLetter, mode]);
 
     return (
-        <div
-            className={`alphabet-container ${isFlashing ? 'flash-effect' : ''}`}
-            ref={containerRef}
-            onMouseMove={handleContainerMouseMove}
-            onMouseUp={handleContainerMouseUp}
-            onMouseLeave={handleContainerMouseUp}
-            onTouchMove={handleContainerMouseMove}
-            onTouchEnd={handleContainerMouseUp}
-        >
-            {/* Draggable Friends Layer */}
-            {friends.map(friend => (
-                <div
-                    key={friend.id}
-                    className="draggable-friend"
-                    style={{ left: friend.x, top: friend.y, zIndex: draggingFriendId === friend.id ? 100 : 10 }}
-                    onMouseDown={(e) => handleFriendDragStart(e, friend.id)}
-                    onTouchStart={(e) => handleFriendDragStart(e, friend.id)}
-                >
-                    {friend.emoji}
-                </div>
-            ))}
+        <div className={`alphabet-container ${isFlashing ? 'flash-effect' : ''}`}>
             <div className="mode-toggle">
                 <button
                     className={`toggle-btn ${mode === 'tracing' ? 'active' : ''}`}
