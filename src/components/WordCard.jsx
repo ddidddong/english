@@ -3,8 +3,8 @@ import { useState } from 'react';
 export default function WordCard({ wordData }) {
     const [flipped, setFlipped] = useState(false);
 
-    const hasImage = !!wordData.imageUrl;
     const hasSentence = !!wordData.sentence;
+    const bgImage = wordData.imageUrl || `https://loremflickr.com/600/400/${encodeURIComponent(wordData.word.split(' ')[0])}`;
 
     const handleSpeak = (e, text) => {
         e.stopPropagation(); // Prevent flipping if we just want to hear it
@@ -42,12 +42,10 @@ export default function WordCard({ wordData }) {
                 <div className="word-card-back">
                     <div
                         className="card-image-bg"
-                        style={hasImage ? { backgroundImage: `url(${wordData.imageUrl})` } : {
-                            background: 'linear-gradient(135deg, var(--secondary) 0%, #B5C18E 100%)'
-                        }}
+                        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('${bgImage}')` }}
                     >
-                        <div className="card-overlay" style={!hasImage ? { background: 'transparent', justifyContent: 'center' } : {}}>
-                            <h3 className="word-title-small" style={!hasImage ? { fontSize: '2.5rem', marginBottom: '1.5rem', color: '#fff' } : {}}>
+                        <div className="card-overlay">
+                            <h3 className="word-title-small">
                                 {wordData.word}
                             </h3>
 

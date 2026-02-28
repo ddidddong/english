@@ -170,12 +170,23 @@ export default function VocabularyBook() {
                             </div>
 
                             <div className="modal-search">
-                                <input
-                                    type="text"
-                                    placeholder="단어 또는 뜻으로 검색..."
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
+                                <div className="search-input-wrapper">
+                                    <input
+                                        type="text"
+                                        placeholder="단어 또는 뜻으로 검색..."
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                    />
+                                    {searchQuery && (
+                                        <button
+                                            className="search-clear-btn"
+                                            onClick={() => setSearchQuery('')}
+                                            aria-label="Clear search"
+                                        >
+                                            ✕
+                                        </button>
+                                    )}
+                                </div>
                             </div>
 
                             <div className="modal-list">
