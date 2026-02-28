@@ -81,6 +81,6 @@ lines.forEach(line => {
     }
 });
 
-const outputPath = path.join(__dirname, '../src/data/words1000.json');
+const outputPath = './src/data/words1000.json';
 fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
 console.log('Successfully wrote 1000 words to', outputPath);
