@@ -1,14 +1,25 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import WordCard from './WordCard';
 import wordsData from '../data/words1000.json';
 import './VocabularyBook.css';
 
 export default function VocabularyBook() {
     const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+
+    // Refs for scrolling
     const scrollContainerRef = useRef(null);
+    const wordsContainerRef = useRef(null);
 
     const activeCategory = wordsData[activeCategoryIndex];
+
+    // Filter words based on search query
+    const filteredWords = activeCategory.words.filter(word =>
+        word.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        word.meaning.includes(searchQuery)
+    );
 
     // Auto-scroll the pattern tabs to the active item
     useEffect(() => {
@@ -27,6 +38,22 @@ export default function VocabularyBook() {
     const handleCategoryChange = (idx) => {
         window.speechSynthesis.cancel();
         setActiveCategoryIndex(idx);
+        setSearchQuery('');
+
+        // Reset horizontal scroll of words to start
+        if (wordsContainerRef.current) {
+            wordsContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+    };
+
+    const scrollWords = (direction) => {
+        if (wordsContainerRef.current) {
+            const scrollAmount = 340; // Approx card width + gap
+            wordsContainerRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     };
 
     // Stagger animation for Word Cards
@@ -54,13 +81,11 @@ export default function VocabularyBook() {
                 <p className="section-desc-ko">일상 회화에 가장 많이 쓰이는 1000개의 단어장입니다.</p>
             </div>
 
-            {/* Horizontal Scroll Tabs (using same CSS pattern from EssentialSentences) */}
+            {/* Horizontal Scroll Tabs */}
             <div className="pattern-tabs-wrapper" style={{ marginBottom: 0 }}>
                 <div className="pattern-tabs" ref={scrollContainerRef}>
                     {wordsData.map((category, idx) => {
-                        // Extracting just the Korean part or a short title for the tab
-                        // E.g., from "1. 필수 동사 100 (Essential Verbs)" -> "필수 동사 100"
-                        const match = category.title.match(/(\\S+\\s*\\S+\\s*100)/);
+                        const match = category.title.match(/(.+100)/);
                         const shortTitle = match ? match[0] : `카테고리 ${idx + 1}`;
 
                         return (
@@ -76,23 +101,107 @@ export default function VocabularyBook() {
                 </div>
             </div>
 
-            <div className="category-full-title">
-                <h3>{activeCategory.title}</h3>
+            <div className="category-header-area">
+                <h3 className="category-full-title">{activeCategory.title}</h3>
+                <button
+                    className="view-all-btn"
+                    onClick={() => setIsModalOpen(true)}
+                >
+                    ⊞ 전체 단어장 모아보기
+                </button>
             </div>
 
-            <motion.div
-                className="word-cards-container custom-scrollbar"
-                variants={containerVariants}
-                initial="hidden"
-                animate="show"
-                key={activeCategoryIndex} // Re-trigger animation on category change
-            >
-                {activeCategory.words.map((word, index) => (
-                    <motion.div key={index} variants={itemVariants}>
-                        <WordCard wordData={word} />
+            {/* Carousel display area with arrows */}
+            <div className="word-cards-viewport">
+                <button
+                    className="nav-arrow left-arrow"
+                    onClick={() => scrollWords('left')}
+                    aria-label="Scroll Left"
+                >
+                    ◀
+                </button>
+
+                <motion.div
+                    className="word-cards-container custom-scrollbar"
+                    ref={wordsContainerRef}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    key={activeCategoryIndex}
+                >
+                    {activeCategory.words.map((word, index) => (
+                        <motion.div key={index} variants={itemVariants}>
+                            <WordCard wordData={word} />
+                        </motion.div>
+                    ))}
+                </motion.div>
+
+                <button
+                    className="nav-arrow right-arrow"
+                    onClick={() => scrollWords('right')}
+                    aria-label="Scroll Right"
+                >
+                    ▶
+                </button>
+            </div>
+
+            {/* View All Modal Overlay */}
+            <AnimatePresence>
+                {isModalOpen && (
+                    <motion.div
+                        className="modal-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        <motion.div
+                            className="modal-content"
+                            initial={{ y: 50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1, transition: { type: 'spring', damping: 25 } }}
+                            exit={{ y: 50, opacity: 0 }}
+                        >
+                            <div className="modal-header">
+                                <h3>{activeCategory.title} 전체보기</h3>
+                                <button className="close-btn" onClick={() => setIsModalOpen(false)}>✕</button>
+                            </div>
+
+                            <div className="modal-search">
+                                <input
+                                    type="text"
+                                    placeholder="단어 또는 뜻으로 검색..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="modal-list">
+                                {filteredWords.length === 0 ? (
+                                    <div className="no-results">검색 결과가 없습니다.</div>
+                                ) : (
+                                    filteredWords.map((word, index) => (
+                                        <div key={index} className="modal-list-item">
+                                            <div className="modal-word-en">{word.word}</div>
+                                            <div className="modal-word-ko">{word.meaning}</div>
+                                            <button
+                                                className="modal-audio-btn"
+                                                onClick={() => {
+                                                    if ('speechSynthesis' in window) {
+                                                        const u = new SpeechSynthesisUtterance(word.word);
+                                                        u.lang = 'en-US';
+                                                        window.speechSynthesis.speak(u);
+                                                    }
+                                                }}
+                                            >
+                                                🔊
+                                            </button>
+                                        </div>
+                                    ))
+                                )}
+                            </div>
+                        </motion.div>
                     </motion.div>
-                ))}
-            </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }
