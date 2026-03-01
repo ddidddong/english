@@ -8,6 +8,8 @@ export default function AlphabetWriting() {
     const drawingTimeoutRef = useRef(null);
     const hasDrawnRef = useRef(false);
     const hitMapRef = useRef(null);
+    const guideCanvasRef = useRef(null);
+    const animationRef = useRef(null);
 
     const [mode, setMode] = useState('tracing'); // 'tracing' | 'freehand'
     const [isDrawing, setIsDrawing] = useState(false);
@@ -191,57 +193,6 @@ export default function AlphabetWriting() {
         ctx.stroke();
         ctx.setLineDash([]);
 
-        // Draw Stroke Order Guides
-        const guides = STROKE_GUIDES[currentLetter];
-        if (guides) {
-            guides.forEach((guide) => {
-                // Draw circle background for number
-                ctx.beginPath();
-                ctx.arc(guide.x, guide.y, 14, 0, Math.PI * 2);
-                ctx.fillStyle = '#777';
-                ctx.fill();
-
-                // Draw number text
-                ctx.font = 'bold 16px "Inter", sans-serif';
-                ctx.fillStyle = '#ffffff';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillText(guide.text, guide.x, guide.y);
-
-                // Draw tiny arrow indicating direction
-                ctx.beginPath();
-                ctx.strokeStyle = '#777';
-                ctx.lineWidth = 3;
-
-                const arrowLen = 15;
-                const offset = 18;
-                let startX = guide.x;
-                let startY = guide.y;
-                let endX = startX;
-                let endY = startY;
-
-                if (guide.dir === 'd') { startY += offset; endY = startY + arrowLen; }
-                else if (guide.dir === 'r') { startX += offset; endX = startX + arrowLen; }
-                else if (guide.dir === 'l') { startX -= offset; endX = startX - arrowLen; }
-                else if (guide.dir === 'dl') { startX -= offset; startY += offset; endX = startX - arrowLen; endY = startY + arrowLen; }
-                else if (guide.dir === 'dr') { startX += offset; startY += offset; endX = startX + arrowLen; endY = startY + arrowLen; }
-
-                // Only draw arrow if we defined an offset start
-                if (startX !== guide.x || startY !== guide.y) {
-                    // draw arrow shaft
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(endX, endY);
-                    ctx.stroke();
-
-                    // draw arrowhead
-                    ctx.beginPath();
-                    ctx.fillStyle = '#777';
-                    ctx.arc(endX, endY, 4, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            });
-        }
-
         // Reset stroke for drawing
         ctx.strokeStyle = '#FF7B54'; /* primary color */
         ctx.lineWidth = 15;
@@ -294,57 +245,158 @@ export default function AlphabetWriting() {
         }
     }, [currentLetter, mode]);
 
+    // Guide Canvas Animation Loop
+    useEffect(() => {
+        const gCanvas = guideCanvasRef.current;
+        if (!gCanvas) return;
+
+        gCanvas.width = 150;
+        gCanvas.height = 150;
+        const ctx = gCanvas.getContext('2d');
+        const drawScale = 0.5;
+
+        let step = 0;
+        let isAnimating = true;
+
+        const drawFrame = () => {
+            if (!isAnimating) return;
+            ctx.clearRect(0, 0, 150, 150);
+
+            // Draw background letter
+            ctx.font = '140px "Inter", sans-serif';
+            ctx.fillStyle = '#e0e0e0';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(currentLetter, 75, 75 + 10);
+
+            // Draw center dashed guide line
+            ctx.beginPath();
+            ctx.setLineDash([5, 5]);
+            ctx.moveTo(0, 75);
+            ctx.lineTo(150, 75);
+            ctx.strokeStyle = '#cccccc';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            const guides = STROKE_GUIDES[currentLetter];
+            if (guides && guides.length > 0) {
+                const maxSteps = guides.length;
+                const strokesToShow = step % (maxSteps + 2);
+
+                for (let i = 0; i < Math.min(strokesToShow, maxSteps); i++) {
+                    const guide = guides[i];
+                    const gx = guide.x * drawScale;
+                    const gy = guide.y * drawScale;
+
+                    ctx.beginPath();
+                    ctx.arc(gx, gy, 7, 0, Math.PI * 2);
+                    ctx.fillStyle = i === strokesToShow - 1 ? '#FF7B54' : '#777';
+                    ctx.fill();
+
+                    ctx.font = 'bold 8px "Inter", sans-serif';
+                    ctx.fillStyle = '#ffffff';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(guide.text, gx, gy);
+
+                    ctx.beginPath();
+                    ctx.strokeStyle = i === strokesToShow - 1 ? '#FF7B54' : '#777';
+                    ctx.lineWidth = 1.5;
+
+                    const arrowLen = 7.5;
+                    const offset = 9;
+                    let startX = gx;
+                    let startY = gy;
+                    let endX = startX;
+                    let endY = startY;
+
+                    if (guide.dir === 'd') { startY += offset; endY = startY + arrowLen; }
+                    else if (guide.dir === 'r') { startX += offset; endX = startX + arrowLen; }
+                    else if (guide.dir === 'l') { startX -= offset; endX = startX - arrowLen; }
+                    else if (guide.dir === 'dl') { startX -= offset; startY += offset; endX = startX - arrowLen; endY = startY + arrowLen; }
+                    else if (guide.dir === 'dr') { startX += offset; startY += offset; endX = startX + arrowLen; endY = startY + arrowLen; }
+
+                    if (startX !== gx || startY !== gy) {
+                        ctx.moveTo(startX, startY);
+                        ctx.lineTo(endX, endY);
+                        ctx.stroke();
+
+                        ctx.beginPath();
+                        ctx.fillStyle = i === strokesToShow - 1 ? '#FF7B54' : '#777';
+                        ctx.arc(endX, endY, 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                step++;
+                animationRef.current = setTimeout(drawFrame, 800);
+            }
+        };
+
+        drawFrame();
+
+        return () => {
+            isAnimating = false;
+            if (animationRef.current) clearTimeout(animationRef.current);
+        };
+    }, [currentLetter]);
+
     return (
         <div className={`alphabet-container ${isFlashing ? 'flash-effect' : ''}`}>
-            <div className="mode-toggle">
-                <button
-                    className={`toggle-btn ${mode === 'tracing' ? 'active' : ''}`}
-                    onClick={() => setMode('tracing')}
-                >
-                    따라 쓰기 (Tracing)
-                </button>
-                <button
-                    className={`toggle-btn ${mode === 'freehand' ? 'active' : ''}`}
-                    onClick={() => setMode('freehand')}
-                >
-                    혼자 쓰기 (Free Hand)
-                </button>
+            <div className="letter-header-title">
+                — {currentLetter} —
             </div>
 
-            <div className="controls-top">
-                <button onClick={prevLetter} className="nav-btn">◀</button>
-                <div className="letter-indicator">Letter: {currentLetter}</div>
-                <button onClick={nextLetter} className="nav-btn">▶</button>
-            </div>
-
-            <div className={`canvas-wrapper ${isRecognizing ? 'recognizing' : ''}`}>
-                <canvas
-                    ref={canvasRef}
-                    className="drawing-board"
-                    onMouseDown={startDrawing}
-                    onMouseMove={draw}
-                    onMouseUp={endDrawing}
-                    onMouseLeave={endDrawing}
-                    onTouchStart={startDrawing}
-                    onTouchMove={draw}
-                    onTouchEnd={endDrawing}
-                />
-                {showStamp && (
-                    <div className="stamp-overlay">
-                        <div className="stamp-text">참 잘했어요!</div>
+            <div className="alphabet-main-area">
+                <div className="guide-box">
+                    <div className="box-title">쓰는 순서</div>
+                    <div className="guide-canvas-wrapper">
+                        <canvas ref={guideCanvasRef} className="guide-canvas" />
                     </div>
-                )}
-                {isRecognizing && (
-                    <div className="recognizing-overlay">
-                        <span className="loader-text">AI 확인 중...</span>
+                </div>
+
+                <div className="interactive-box">
+                    <div className="box-title">
+                        <span className={`interactive-mode ${mode === 'tracing' ? 'active' : ''}`} onClick={() => setMode('tracing')}>따라쓰기</span>
+                        <span className="mode-divider">|</span>
+                        <span className={`interactive-mode ${mode === 'freehand' ? 'active' : ''}`} onClick={() => setMode('freehand')}>혼자쓰기</span>
                     </div>
-                )}
+                    <div className={`canvas-wrapper ${isRecognizing ? 'recognizing' : ''}`}>
+                        <canvas
+                            ref={canvasRef}
+                            className="drawing-board"
+                            width={300}
+                            height={300}
+                            onMouseDown={startDrawing}
+                            onMouseMove={draw}
+                            onMouseUp={endDrawing}
+                            onMouseLeave={endDrawing}
+                            onTouchStart={startDrawing}
+                            onTouchMove={draw}
+                            onTouchEnd={endDrawing}
+                        />
+                        {showStamp && (
+                            <div className="stamp-overlay">
+                                <div className="stamp-text">참 잘했어요!</div>
+                            </div>
+                        )}
+                        {isRecognizing && (
+                            <div className="recognizing-overlay">
+                                <span className="loader-text">AI 확인 중...</span>
+                            </div>
+                        )}
+                    </div>
+                </div>
             </div>
 
-            <div className="controls-bottom">
-                <button className="clear-btn" onClick={clearCanvas}>
-                    지우기 (Clear)
-                </button>
+            <div className="alphabet-footer-card">
+                <div className="progress-text">{currentLetterIndex + 1} / {LETTERS.length}</div>
+                <div className="nav-buttons-row">
+                    <button className="nav-action-btn" onClick={prevLetter}>이전 알파벳</button>
+                    <button className="nav-action-btn primary" onClick={clearCanvas}>다시쓰기</button>
+                    <button className="nav-action-btn" onClick={nextLetter}>다음 알파벳</button>
+                </div>
             </div>
         </div>
     );
