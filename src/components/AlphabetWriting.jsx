@@ -275,7 +275,6 @@ export default function AlphabetWriting() {
                 </div>
 
                 <div className="interactive-box">
-                    <div className="box-title">혼자 쓰기</div>
                     <div className={`canvas-wrapper ${isRecognizing ? 'recognizing' : ''}`}>
                         <canvas
                             ref={canvasRef}
