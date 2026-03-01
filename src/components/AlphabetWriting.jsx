@@ -7,11 +7,9 @@ export default function AlphabetWriting() {
     const canvasRef = useRef(null);
     const drawingTimeoutRef = useRef(null);
     const hasDrawnRef = useRef(false);
-    const hitMapRef = useRef(null);
     const guideCanvasRef = useRef(null);
     const animationRef = useRef(null);
 
-    const [mode, setMode] = useState('tracing'); // 'tracing' | 'freehand'
     const [isDrawing, setIsDrawing] = useState(false);
     const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
     const [isFlashing, setIsFlashing] = useState(false);
@@ -38,22 +36,6 @@ export default function AlphabetWriting() {
         const { offsetX, offsetY } = getCoordinates(nativeEvent);
         const ctx = canvasRef.current.getContext('2d');
 
-        // Tracing Validation
-        if (mode === 'tracing' && hitMapRef.current) {
-            const x = Math.floor(offsetX);
-            const y = Math.floor(offsetY);
-            // Ensure within bounds
-            if (x >= 0 && x < 300 && y >= 0 && y < 300) {
-                const isHit = hitMapRef.current[y * 300 + x];
-                if (!isHit) {
-                    ctx.strokeStyle = '#ff3b30'; // Red for error
-                    if (navigator.vibrate) navigator.vibrate(50);
-                } else {
-                    ctx.strokeStyle = '#FF7B54'; // Back to normal
-                }
-            }
-        }
-
         ctx.lineTo(offsetX, offsetY);
         ctx.stroke();
     };
@@ -68,16 +50,11 @@ export default function AlphabetWriting() {
             if (drawingTimeoutRef.current) {
                 clearTimeout(drawingTimeoutRef.current);
             }
-            // Use longer timeout for freehand since letters take multiple strokes
-            const timeoutDuration = mode === 'freehand' ? 1500 : 450;
+            // Use longer timeout since letters take multiple strokes
             drawingTimeoutRef.current = setTimeout(() => {
-                if (mode === 'freehand') {
-                    recognizeDrawing();
-                } else {
-                    handleDone();
-                }
+                recognizeDrawing();
                 hasDrawnRef.current = false;
-            }, timeoutDuration);
+            }, 1500);
         }
     };
 
@@ -129,9 +106,6 @@ export default function AlphabetWriting() {
         if (canvas) {
             const ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            if (mode === 'tracing') {
-                drawGuideLetter(ctx, canvas.width, canvas.height);
-            }
         }
     };
 
@@ -145,59 +119,6 @@ export default function AlphabetWriting() {
         if (drawingTimeoutRef.current) clearTimeout(drawingTimeoutRef.current);
         hasDrawnRef.current = false;
         setCurrentLetterIndex((prev) => (prev === 0 ? LETTERS.length - 1 : prev - 1));
-    };
-
-    const generateHitMap = () => {
-        const w = 300;
-        const h = 300;
-        const offCanvas = document.createElement('canvas');
-        offCanvas.width = w;
-        offCanvas.height = h;
-        const ctx = offCanvas.getContext('2d');
-
-        ctx.font = '280px "Inter", sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-
-        // Draw very thick to allow sloppy tracing
-        ctx.lineWidth = 60;
-        ctx.strokeStyle = 'black';
-        ctx.strokeText(currentLetter, w / 2, h / 2 + 20);
-        ctx.fillStyle = 'black';
-        ctx.fillText(currentLetter, w / 2, h / 2 + 20);
-
-        const imgData = ctx.getImageData(0, 0, w, h).data;
-        const map = new Uint8Array(w * h);
-        for (let i = 0; i < w * h; i++) {
-            // Check alpha channel
-            map[i] = imgData[i * 4 + 3] > 10 ? 1 : 0;
-        }
-        hitMapRef.current = map;
-    };
-
-    const drawGuideLetter = (ctx, w, h) => {
-        // Draw background guide letter
-        ctx.font = '280px "Inter", sans-serif';
-        ctx.fillStyle = '#e0e0e0';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(currentLetter, w / 2, h / 2 + 20);
-
-        // Draw center dashed guide line
-        ctx.beginPath();
-        ctx.setLineDash([10, 10]);
-        ctx.moveTo(0, h / 2);
-        ctx.lineTo(w, h / 2);
-        ctx.strokeStyle = '#cccccc';
-        ctx.lineWidth = 1;
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        // Reset stroke for drawing
-        ctx.strokeStyle = '#FF7B54'; /* primary color */
-        ctx.lineWidth = 15;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
     };
 
     const handleDone = () => {
@@ -229,9 +150,6 @@ export default function AlphabetWriting() {
             ctx.strokeStyle = '#FF7B54';
 
             clearCanvas();
-            if (mode === 'tracing') {
-                generateHitMap();
-            }
 
             // Prevent scrolling when touching canvas
             const preventScroll = (e) => e.preventDefault();
@@ -243,7 +161,7 @@ export default function AlphabetWriting() {
                 canvas.removeEventListener('touchmove', preventScroll);
             }
         }
-    }, [currentLetter, mode]);
+    }, [currentLetter]);
 
     // Guide Canvas Animation Loop
     useEffect(() => {
@@ -357,11 +275,7 @@ export default function AlphabetWriting() {
                 </div>
 
                 <div className="interactive-box">
-                    <div className="box-title">
-                        <span className={`interactive-mode ${mode === 'tracing' ? 'active' : ''}`} onClick={() => setMode('tracing')}>따라쓰기</span>
-                        <span className="mode-divider">|</span>
-                        <span className={`interactive-mode ${mode === 'freehand' ? 'active' : ''}`} onClick={() => setMode('freehand')}>혼자쓰기</span>
-                    </div>
+                    <div className="box-title">혼자 쓰기</div>
                     <div className={`canvas-wrapper ${isRecognizing ? 'recognizing' : ''}`}>
                         <canvas
                             ref={canvasRef}
