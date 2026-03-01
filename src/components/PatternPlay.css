@@ -12,6 +12,34 @@
     margin: 0 auto;
 }
 
+.pattern-play-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.pattern-tab {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: var(--card-bg);
+    border: 2px solid transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.pattern-tab.active {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 123, 84, 0.3);
+}
+
 .pattern-sentence-wrapper {
     display: flex;
     flex-direction: column;
@@ -83,18 +111,4 @@
     background-color: rgba(255, 123, 84, 0.1);
     border-color: var(--primary);
     color: var(--primary);
-}
-
-.next-pattern-btn {
-    background: none;
-    border: none;
-    font-size: 1.1rem;
-    color: var(--secondary);
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-.next-pattern-btn:hover {
-    text-decoration: underline;
 }

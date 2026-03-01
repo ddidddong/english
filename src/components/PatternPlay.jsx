@@ -60,13 +60,28 @@ export default function PatternPlay() {
         }
     };
 
-    const nextPattern = () => {
-        setCurrentPatternIndex((prev) => (prev + 1) % PATTERNS.length);
+    const handlePatternSelect = (index) => {
+        setCurrentPatternIndex(index);
         setSelectedWord(null);
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
     };
 
     return (
         <div className="pattern-play-container">
+            <div className="pattern-play-tabs">
+                {PATTERNS.map((p, idx) => (
+                    <button
+                        key={p.id}
+                        className={`pattern-tab ${idx === currentPatternIndex ? 'active' : ''}`}
+                        onClick={() => handlePatternSelect(idx)}
+                    >
+                        {p.prefix} ~
+                    </button>
+                ))}
+            </div>
+
             <div className="pattern-sentence-wrapper">
                 <div className="pattern-sentence">
                     <span className="static-text">{pattern.prefix}</span>
@@ -92,9 +107,6 @@ export default function PatternPlay() {
                 ))}
             </div>
 
-            <button className="next-pattern-btn" onClick={nextPattern}>
-                Next Pattern ➔
-            </button>
         </div>
     );
 }

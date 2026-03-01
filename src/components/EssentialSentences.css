@@ -65,22 +65,14 @@
 
 .pattern-tabs {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 0.8rem;
-    padding: 0.5rem 0.2rem 1rem 0.2rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-.pattern-tabs::-webkit-scrollbar {
-    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0 1rem 0;
 }
 
 .pattern-tab {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1rem;
     border-radius: 50px;
     background-color: var(--card-bg);
     border: 2px solid transparent;

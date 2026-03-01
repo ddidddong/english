@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './GNB.css';
+import logoImg from '../assets/logo.png';
 
 export default function GNB({ activeTab, setActiveTab }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,8 @@ export default function GNB({ activeTab, setActiveTab }) {
         <nav className="gnb-nav">
             <div className="gnb-header-mobile">
                 <div className="gnb-logo">
-                    🍊 Daily Snap
+                    <img src={logoImg} alt="Gugu Math Logo" className="gnb-logo-img" />
+                    구구수학
                 </div>
                 <button
                     className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
